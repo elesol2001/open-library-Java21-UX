@@ -1,18 +1,23 @@
 <script>
+import { VueElement } from '@vue/runtime-dom';
 import { RouterLink, RouterView } from "vue-router";
 import BookIndex from "./components/BookIndex.vue";
+import { useCounterStore } from './stores/pinia.js';
+let counter;
 
 export default {
+  setup(){
+    counter = useCounterStore();
+  },
   data() {
     return {
       books: [
 
       ],
-      readbooks: [
-        "https://covers.openlibrary.org/b/isbn/0450032205-M.jpg",
-        "https://covers.openlibrary.org/b/isbn/4758010374-M.jpg",
+      listedBooks: [
+
       ],
-      theArray: [
+      mainReadBooks: [
 
       ]
     };
@@ -21,28 +26,57 @@ export default {
     BookIndex,
   },
   created(){
-    this.getData();
-   // this.saveBook("https://covers.openlibrary.org/b/isbn/0450032205-M.jpg", "cool book")
+    //localStorage.clear()
+
+    /*
+  this.saveBook("https://covers.openlibrary.org/b/isbn/0450032205-M.jpg", "cool book")
+   this.saveBook("https://covers.openlibrary.org/b/isbn/0393964523-M.jpg", "cool book")
+   this.saveReadBook("https://covers.openlibrary.org/b/isbn/0450032205-M.jpg", "cool book")
+   this.saveBook("https://covers.openlibrary.org/b/isbn/0521222311-M.jpg", "cool book")
+   */
+   this.getData();
+   //this.saveBook("https://covers.openlibrary.org/b/isbn/0838862705-M.jpg", "cool book")
+
   },
   methods:{
+    setToRead(cover){
+      console.log(cover);
+    },
     saveBook(bookCover, bookName){
-      this.theArray[this.theArray.length] = {bookCover, bookName};
-      localStorage.setItem("books", JSON.stringify(this.theArray));
+      this.listedBooks[this.listedBooks.length] = {bookCover, bookName};
+      localStorage.setItem("books", JSON.stringify(this.listedBooks));
+    },
+    saveReadBook(bookCover, bookName){
+      let read = true;
+      counter.listedReadBooks[counter.listedReadBooks.length] = {bookCover, bookName, read};
+      localStorage.setItem("readbooks", JSON.stringify(counter.listedReadBooks));
+    },
+    addReadBook(bookCover, bookName){
+      let read = true;
+      counter.readBooks.push({ bookCover, bookName, read });
+      this.mainReadBooks = counter.readBooks;
     },
     addBook(bookCover, bookName){
       let read = false;
-      for (const v of this.readbooks){
-        if (bookCover === v){
+      for (const v of counter.readBooks){
+        if (bookCover === v.bookCover){
           read = true;
         }
       }
-      this.books[this.books.length] = { bookCover, bookName, read };
+      this.books.push({ bookCover, bookName, read });
     },
     getData(){
-      this.theArray = JSON.parse(localStorage.getItem("books"));
-      console.log(this.theArray);
-      for (let v of this.theArray){
+      this.listedBooks = JSON.parse(localStorage.getItem("books"));
+      counter.listedReadBooks = JSON.parse(localStorage.getItem("readbooks"));
+      
+      if (counter.listedReadBooks){
+      for (let v of counter.listedReadBooks){
+        this.addReadBook(v.bookCover, v.bookName, v.read);
+      }}
+      if (this.listedBooks){
+      for (let v of this.listedBooks){
         this.addBook(v.bookCover, v.bookName, v.read);
+      }
       }
     }
   }
@@ -58,9 +92,9 @@ export default {
       <div id="books">
            <BookIndex v-for="v in books" :key="v.bookCover" :bookCover="v.bookCover" :bookName="v.bookName" :read="v.read"/>
       </div>
-      <h1>de bästa!</h1>
+      <h1>Lästa böcker</h1>
       <div id="books">
-           <BookIndex v-for="v in books" :key="v.bookCover" :bookCover="v.bookCover" :bookName="v.bookName" :read="v.read"/>
+           <BookIndex v-for="v in mainReadBooks" :key="v.bookCover" :bookCover="v.bookCover" :bookName="v.bookName" :read="v.read"/>
       </div>
     </div>
   </header>
