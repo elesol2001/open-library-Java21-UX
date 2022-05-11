@@ -1,25 +1,20 @@
-<template>
-    <div class="title-div">
-        <button @click="getTitle">Get title here!</button>
-        <div v-if="title">{{ title }}</div>
-    </div>
-</template>
-
 <script>
+import TitleIndex from "../components/TitleIndex.vue";
+import AuthorIndex from "../components/AuthorIndex.vue";
+import SummaryIndex from "../components/SummaryIndex.vue";
+
 export default {
-    data () {
-        return  {
-            title: null
-        }
-    },
-    methods: {
-        async getTitle() {
-            const resp = await fetch("https://openlibrary.org/works/OL81633W.json")
-            const data = await resp.json()
-            const title = data.title
-            this.title = title
-        }
-    },
+    components: {
+    TitleIndex,
+    AuthorIndex,
+    SummaryIndex
+}
 }
 </script>
+
+<template>
+    <title-index></title-index>
+    <author-index></author-index>
+    <summary-index></summary-index>
+</template>
 
