@@ -9,7 +9,7 @@
             async getSum() {
                 const resp = await fetch("https://openlibrary.org/works/OL81633W.json")
                 const data = await resp.json()
-                const sum = data.value
+                const sum = data.description.value
                 this.sum = sum
             }
         }
