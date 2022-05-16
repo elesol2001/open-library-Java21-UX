@@ -37,7 +37,7 @@ function displayInfo() {
       type="image"
       @click="displayInfo"
       id="info-button"
-      src="https://cdn-icons-png.flaticon.com/512/61/61093.png"
+      src="https://cdn.discordapp.com/attachments/957985598944194573/973834193052246066/Informationikon.png"
       alt="info"
       width="50"
       height="50"
