@@ -1,14 +1,16 @@
 <template>
     <div class="title-index">
         <button @click="getTitle">Get title here!</button>
-        <div v-if="title">{{ title }}</div>
+        <div v-if="title">
+            <h1>{{ title }}</h1>
+        </div>
     </div>
 </template>
 
 <script>
 export default {
-    data () {
-        return  {
+    data() {
+        return {
             title: null
         }
     },

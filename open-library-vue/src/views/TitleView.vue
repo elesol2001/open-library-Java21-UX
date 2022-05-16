@@ -2,19 +2,23 @@
 import TitleIndex from "../components/TitleIndex.vue";
 import AuthorIndex from "../components/AuthorIndex.vue";
 import SummaryIndex from "../components/SummaryIndex.vue";
+import CoverIndex from "../components/CoverIndex.vue";
+
 
 export default {
     components: {
     TitleIndex,
     AuthorIndex,
-    SummaryIndex
+    SummaryIndex,
+    CoverIndex
 }
 }
 </script>
 
 <template>
-    <title-index></title-index>
-    <author-index></author-index>
-    <summary-index></summary-index>
+    <CoverIndex />
+    <TitleIndex />
+    <AuthorIndex />
+    <SummaryIndex />
 </template>
 
