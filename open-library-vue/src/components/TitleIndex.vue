@@ -7,9 +7,9 @@
 
 <script>
 export default {
-    data () {
-        return  {
-            title: null
+    data() {
+        return {
+            title: null,
         }
     },
     methods: {
@@ -18,7 +18,7 @@ export default {
             const data = await resp.json()
             const title = data.title
             this.title = title
-        }
+        },
     },
 }
 </script>

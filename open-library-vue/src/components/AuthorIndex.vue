@@ -2,7 +2,7 @@
 export default {
     data() {
         return {
-            author: null
+            author: null,
         }
     },
     methods: {
@@ -11,7 +11,7 @@ export default {
             const data = await resp.json()
             const author = data.name
             this.author = author
-        }
+        },
     },
 }
 </script>
@@ -22,4 +22,3 @@ export default {
         <div v-if="author">{{ author }}</div>
     </div>
 </template>
-

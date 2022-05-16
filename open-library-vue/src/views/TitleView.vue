@@ -1,14 +1,14 @@
 <script>
-import TitleIndex from "../components/TitleIndex.vue";
-import AuthorIndex from "../components/AuthorIndex.vue";
-import SummaryIndex from "../components/SummaryIndex.vue";
+import TitleIndex from "../components/TitleIndex.vue"
+import AuthorIndex from "../components/AuthorIndex.vue"
+import SummaryIndex from "../components/SummaryIndex.vue"
 
 export default {
     components: {
-    TitleIndex,
-    AuthorIndex,
-    SummaryIndex
-}
+        TitleIndex,
+        AuthorIndex,
+        SummaryIndex,
+    },
 }
 </script>
 
@@ -17,4 +17,3 @@ export default {
     <author-index></author-index>
     <summary-index></summary-index>
 </template>
-
