@@ -29,6 +29,9 @@ function displayInfo() {
     <header>
       <div class="wrapper">
         <nav>
+          <RouterLink to="/">Home</RouterLink>
+          <RouterLink to="/about">About</RouterLink>
+          <RouterLink to="/title">Title</RouterLink>
           <RouterLink to="/mylib">LIB</RouterLink>
         </nav>
       </div>
@@ -45,6 +48,7 @@ function displayInfo() {
   </div>
   <RouterView />
 </template>
+
 
 <style>
 #container {
@@ -117,3 +121,4 @@ function displayInfo() {
 }
 
 </style>
+
