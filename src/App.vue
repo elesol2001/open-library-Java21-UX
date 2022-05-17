@@ -1,5 +1,15 @@
-<script setup>
+<script>
 import { RouterLink, RouterView } from "vue-router"
+
+export default {
+  methods: {
+    displayInfo,
+  },
+  components: {
+    RouterLink,
+    RouterView,
+  },
+}
 
 function displayInfo() {
   let dim = document.createElement("div")
