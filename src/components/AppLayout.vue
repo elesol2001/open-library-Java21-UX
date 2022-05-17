@@ -37,6 +37,15 @@ function displayInfo() {
     <header>
       <nav>
         <RouterLink to="/">Home (books icon)</RouterLink>
+        <input
+          type="image"
+          @click="displayInfo"
+          id="info-button"
+          src="https://cdn.discordapp.com/attachments/957985598944194573/973834193052246066/Informationikon.png"
+          alt="info"
+          width="50"
+          height="50"
+        />
       </nav>
       <RouterView />
       <nav>
@@ -45,15 +54,6 @@ function displayInfo() {
         <RouterLink to="/mylib">Library (icon)</RouterLink>
       </nav>
     </header>
-    <input
-      type="image"
-      @click="displayInfo"
-      id="info-button"
-      src="https://cdn.discordapp.com/attachments/957985598944194573/973834193052246066/Informationikon.png"
-      alt="info"
-      width="50"
-      height="50"
-    />
   </div>
 </template>
 

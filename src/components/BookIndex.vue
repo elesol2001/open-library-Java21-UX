@@ -1,5 +1,5 @@
 <script>
-import MyLibraryVue from "@/MyLibrary.vue"
+import MyLibraryVue from "@/views/MyLibrary.vue"
 export default {
   props: ["bookCover", "bookName", "read"],
   methods: {
