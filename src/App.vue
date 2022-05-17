@@ -33,19 +33,17 @@ function displayInfo() {
 </script>
 
 <template>
-  <div id="container">
-    <h1>Hi</h1>
-    <h1>Greetings</h1>
-    <h1>Hello</h1>
+  <div>
     <header>
-      <div class="wrapper">
-        <nav>
-          <RouterLink to="/">Home</RouterLink>
-          <RouterLink to="/about">About</RouterLink>
-          <RouterLink to="/title">Title</RouterLink>
-          <RouterLink to="/mylib">LIB</RouterLink>
-        </nav>
-      </div>
+      <nav>
+        <RouterLink to="/">Home (books icon)</RouterLink>
+      </nav>
+      <RouterView />
+      <nav>
+        <RouterLink to="/">Home (icon)</RouterLink>
+        <RouterLink to="/search">Search (icon)</RouterLink>
+        <RouterLink to="/mylib">Library (icon)</RouterLink>
+      </nav>
     </header>
     <input
       type="image"
@@ -57,7 +55,6 @@ function displayInfo() {
       height="50"
     />
   </div>
-  <RouterView />
 </template>
 
 <style>

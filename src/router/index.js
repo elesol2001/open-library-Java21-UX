@@ -12,17 +12,17 @@ const router = createRouter({
     {
       path: "/about",
       name: "about",
-      component: () => import("../views/AboutView.vue"),
+      component: () => import("@/views/AboutView.vue"),
     },
     {
-      path: "/title",
-      name: "title",
-      component: () => import("../views/TitleView.vue"),
+      path: "/search",
+      name: "search",
+      component: () => import("@/views/SearchView.vue"),
     },
     {
       path: "/mylib",
       name: "mylib",
-      component: () => import("../MyLibrary.vue"),
+      component: () => import("@/MyLibrary.vue"),
     },
   ],
 })
