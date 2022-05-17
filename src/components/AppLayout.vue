@@ -33,37 +33,42 @@ function displayInfo() {
 </script>
 
 <template>
-  <header>
-    <nav id="top-navigation-bar">
-      <RouterLink to="/">Home (books icon)</RouterLink>
-      <input
-        type="image"
-        @click="displayInfo"
-        id="info-button"
-        src="https://cdn.discordapp.com/attachments/957985598944194573/973834193052246066/Informationikon.png"
-        alt="info"
-        width="50"
-        height="50"
-      />
-    </nav>
-    <RouterView />
-    <nav id="bottom-navigation-bar">
-      <RouterLink to="/">Home (icon)</RouterLink>
-      <RouterLink to="/search">Search (icon)</RouterLink>
-      <RouterLink to="/mylib">Library (icon)</RouterLink>
-    </nav>
-  </header>
+  <nav id="top-navigation-bar">
+    <RouterLink to="/"><img src="@/assets/book-logo.svg" alt="Logo" /></RouterLink>
+    <input
+      type="image"
+      @click="displayInfo"
+      id="info-button"
+      src="https://cdn.discordapp.com/attachments/957985598944194573/973834193052246066/Informationikon.png"
+      alt="info"
+      width="50"
+      height="50"
+    />
+  </nav>
+  <RouterView />
+  <nav id="bottom-navigation-bar">
+    <RouterLink to="/"><img src="@/assets/home-icon.svg" alt="Home" /></RouterLink>
+    <RouterLink to="/search"><img src="@/assets/search-icon.svg" alt="Search" /></RouterLink>
+    <RouterLink to="/mylib"><img src="@/assets/library-icon.svg" alt="Library" /></RouterLink>
+  </nav>
 </template>
 
 <style>
 #top-navigation-bar {
   position: sticky;
   top: 0px;
+  background-color: #f2eeeb;
+  border: 1px solid black;
 }
 
 #bottom-navigation-bar {
   position: sticky;
   bottom: 0px;
+  background-color: #f2eeeb;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 #container {
