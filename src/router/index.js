@@ -21,7 +21,7 @@ const router = createRouter({
     {
       path: "/mylib",
       name: "mylib",
-      component: () => import("@/MyLibrary.vue"),
+      component: () => import("@/views/MyLibrary.vue"),
     },
   ],
 })

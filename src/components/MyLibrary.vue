@@ -1,6 +1,6 @@
 <script>
-import BookIndex from "./components/BookIndex.vue"
-import { useCounterStore } from "./stores/pinia.js"
+import BookIndex from "@/components/BookIndex.vue"
+import { useCounterStore } from "@/stores/pinia.js"
 
 let counter
 
