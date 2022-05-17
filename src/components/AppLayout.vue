@@ -64,7 +64,7 @@ function displayInfo() {
 #bottom-navigation-bar {
   position: sticky;
   bottom: 0px;
-  background-color: #f2eeeb;
+  background-color: #bfd6d9;
   border: 1px solid black;
   display: flex;
   flex-direction: row;
