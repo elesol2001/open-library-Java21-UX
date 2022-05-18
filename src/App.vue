@@ -25,9 +25,7 @@ function displayInfo() {
 
 <template>
     <div id="container">
-        <h1>Hi</h1>
-        <h1>Greetings</h1>
-        <h1>Hello</h1>
+
         <header>
             <div class="wrapper">
                 <nav>
