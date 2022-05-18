@@ -11,3 +11,9 @@ export default {
 <template>
   <AppLayout />
 </template>
+
+<style>
+body {
+  margin: 0em;
+}
+</style>
