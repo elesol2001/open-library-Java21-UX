@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router"
 
+
 function displayInfo() {
     let dim = document.createElement("div")
     let popup = document.createElement("div")
@@ -34,6 +35,7 @@ function displayInfo() {
                     <RouterLink to="/about">About</RouterLink>
                     <RouterLink to="/title">Title</RouterLink>
                     <RouterLink to="/mylib">LIB</RouterLink>
+                    <RouterLink :to="{ name: 'SearchIndex'}">SearchIndex</RouterLink>
                 </nav>
             </div>
         </header>
