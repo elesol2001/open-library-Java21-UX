@@ -12,7 +12,7 @@ import { RouterLink } from "vue-router";
 export default {
   data() {
     return {
-      lotsOfThings: ["OL7440033M", "OL81633W", "0521222311"],
+      lotsOfThings: ["OL7440033M", "OL81633W"],
     };
   },
   components: {

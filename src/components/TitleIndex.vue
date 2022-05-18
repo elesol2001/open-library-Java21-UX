@@ -1,6 +1,6 @@
 <template>
     <div class="title-index">
-        <button @click="getTitle">Get title and summary here!</button>
+        <!-- <button @click="getTitle">Get title and summary here!</button> -->
         <div v-if="title">{{ title }}</div>
         <div v-if="sum">{{ sum }}</div>
     </div>
@@ -16,6 +16,9 @@ export default {
             sum: null,
         }
     },
+    created() {
+        this.getTitle();
+    }, 
     methods: {
         async getTitle() {
             const resp = await fetch(`https://openlibrary.org/works/${this.work}.json`)

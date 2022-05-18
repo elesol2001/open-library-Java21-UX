@@ -5,6 +5,9 @@ export default {
             author: null,
         }
     },
+    created() {
+        this.getAuthor();
+    },
     methods: {
         async getAuthor() {
             const resp = await fetch("https://openlibrary.org/authors/OL26320A.json")
@@ -18,7 +21,7 @@ export default {
 
 <template>
     <div class="author-div">
-        <button @click="getAuthor">Get author here!</button>
+        <!-- <button @click="getAuthor">Get author here!</button> -->
         <div v-if="author">{{ author }}</div>
     </div>
 </template>
