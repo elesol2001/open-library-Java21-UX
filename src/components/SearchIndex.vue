@@ -1,21 +1,22 @@
 <template>
   <div>
-    <input
-      v-model="searchfield"
-      placeholder="search title, author, genre"
-    /><br />{{ searchfield }}<br />
+    <div class="header">
+    <input v-model="searchfield" placeholder="search title, author, genre" />
+    <br />{{ searchfield }}<br />
     <button @click="findByAuthor">Author</button>
     <button @click="findByTitle">Title</button>
     <button @click="findByGenre">Genre</button>
-    <div v-for="searchResult in searchResults" :key="searchResult.key">
-      <br><br>
-      <div class="title">{{ searchResult.title }}</div>
-        <div class="name">{{ searchResult.authorName}}</div>
-        <div class="publishdate">{{ searchResult.first_publish_date}}</div>
-        <div class="covers">{{searchResult.covers}}</div>
-        <img src="{{searchResult.coverurl}}"/>
     </div>
-    <br><br>
+    <div class="searchlist" v-for="searchResult in searchResults" :key="searchResult.key">
+      <br /><br />
+    
+      <router-link :to="{ name: 'book', params: {thing: 'searchResult.key' } }">
+      <div class="title">{{ searchResult.title }}</div></router-link>
+      <div class="name">{{ searchResult.authorName }}</div>
+      <div class="publishdate">{{ searchResult.first_publish_date }}</div>
+      <div class="cover"><img :src="searchResult.coverurl" /></div>
+    </div>
+    <br /><br />
   </div>
 </template>
 
@@ -24,66 +25,63 @@ export default {
   props: ["searchResults", "searchfield"],
   data() {
     return {
-      searchResults: [{ Author: "hejhej", id: 1 }],
-    };
+      searchResults: [],
+    }
   },
   methods: {
     findByAuthor() {
-      console.log("findByAuthorIsCalled");
-      console.log(this.searchfield);
-    
-      let author = encodeURIComponent(this.searchfield);
       
+      let author = encodeURIComponent(this.searchfield)
+
       return fetch(`https://openlibrary.org/search/authors.json?q=${author}`)
         .then((res) => {
-          console.log(res);
-          return res.json();
+          
+          return res.json()
         })
         .then((json) => {
-          let author= json.docs[0];
-          let key= json.docs[0].key;
-          console.log(key);
+          let author = json.docs[0]
+          let key = json.docs[0].key
+          
           this.findBooksByAuthorKey(key).then((result) => {
             this.searchResults = result.map((work) => {
-              console.log(work);
-              work.authorName = author.name;
-              let olid = work.key.replace(new RegExp("^/works/"),'');
-              work.coverurl = "https://covers.openlibrary.org/w/olid/"+ work.key+"-S.jpg";
-              //work.coverurl = "https://covers.openlibrary.org/b/olid/"+olid+"-S.jpg";
-              return work;
-            });
-          });
-          console.log("apa");
-          console.log(this.searchResults);
-        });
+              work.authorName = author.name
+              
+              if ("covers" in work) {
+                
+                let coverId = work.covers[0]
+                work.coverurl = "https://covers.openlibrary.org/w/id/" + coverId + "-M.jpg"
+              } else {
+                
+              }
+              return work
+            })
+          })
+          
+        })
     },
-   
+
     findBooksByAuthorKey(key) {
-      const LIMIT = 100;
-      let safeKey = encodeURIComponent(key);
-      console.log(key);
+      const LIMIT = 100
+      let safeKey = encodeURIComponent(key)
+      console.log(key)
       // query for works by author based on the authors key
-      return fetch(
-        `https://openlibrary.org/authors/${safeKey}/works.json?limit=${LIMIT}`
-      )
+      return fetch(`https://openlibrary.org/authors/${safeKey}/works.json?limit=${LIMIT}`)
         .then((res) => {
-          console.log(res); 
-          return res.json();
+          console.log(res)
+          return res.json()
         })
         .then((json) => {
-          console.log(json);
-          return json.entries;
-        });
-      let obj = response.json();
-      return obj.entries;
+          console.log(json)
+          return json.entries
+        })
+      let obj = response.json()
+      return obj.entries
     },
   },
-};
+}
 </script>
     
-<style scoped>
-.title{
-  font-family:Arial, Helvetica, sans-serif;
-  font-weight: bold;
-}
+<style>
+
+
 </style>
