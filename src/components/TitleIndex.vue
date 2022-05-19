@@ -29,6 +29,8 @@ export default {
 
             const sum = data.description.value
             this.sum = sum
+
+            
         },
     },
 }
