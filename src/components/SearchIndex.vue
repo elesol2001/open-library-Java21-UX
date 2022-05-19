@@ -7,10 +7,15 @@
     <button @click="findByAuthor">Author</button>
     <button @click="findByTitle">Title</button>
     <button @click="findByGenre">Genre</button>
-    <div v-for="searchResult in searchResults" :key="searchResult.id">
-      <h2>{{ searchResult.title }}</h2>
-        <div>{{ searchResult}}</div>
+    <div v-for="searchResult in searchResults" :key="searchResult.key">
+      <br><br>
+      <div class="title">{{ searchResult.title }}</div>
+        <div class="name">{{ searchResult.authorName}}</div>
+        <div class="publishdate">{{ searchResult.first_publish_date}}</div>
+        <div class="covers">{{searchResult.covers}}</div>
+        <img src="{{searchResult.coverurl}}"/>
     </div>
+    <br><br>
   </div>
 </template>
 
@@ -26,23 +31,27 @@ export default {
     findByAuthor() {
       console.log("findByAuthorIsCalled");
       console.log(this.searchfield);
-      this.searchResults[0] = { Author: this.searchfield, id: 1 };
+    
       let author = encodeURIComponent(this.searchfield);
       
-      // query for author objects
       return fetch(`https://openlibrary.org/search/authors.json?q=${author}`)
         .then((res) => {
           console.log(res);
           return res.json();
         })
-        .then((json) => {   
-          console.log(json.docs[0]);
-          return json.docs[0].key;
-        })
-        .then((key) => {
+        .then((json) => {
+          let author= json.docs[0];
+          let key= json.docs[0].key;
           console.log(key);
           this.findBooksByAuthorKey(key).then((result) => {
-            this.searchResults = result;
+            this.searchResults = result.map((work) => {
+              console.log(work);
+              work.authorName = author.name;
+              let olid = work.key.replace(new RegExp("^/works/"),'');
+              work.coverurl = "https://covers.openlibrary.org/w/olid/"+ work.key+"-S.jpg";
+              //work.coverurl = "https://covers.openlibrary.org/b/olid/"+olid+"-S.jpg";
+              return work;
+            });
           });
           console.log("apa");
           console.log(this.searchResults);
@@ -50,7 +59,7 @@ export default {
     },
    
     findBooksByAuthorKey(key) {
-      const LIMIT = 500;
+      const LIMIT = 100;
       let safeKey = encodeURIComponent(key);
       console.log(key);
       // query for works by author based on the authors key
@@ -72,5 +81,9 @@ export default {
 };
 </script>
     
-<style>
+<style scoped>
+.title{
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
 </style>
