@@ -31,8 +31,9 @@ function displayInfo() {
                 <nav>
                     <RouterLink to="/">Home</RouterLink>
                     <RouterLink to="/about">About</RouterLink>
+                    <RouterLink to="/start">Start</RouterLink>
                     <RouterLink to="/title">Title</RouterLink>
-                    <RouterLink to="/mylib">LIB</RouterLink>
+                    <RouterLink to="/mylib">Lib</RouterLink>
                     <RouterLink :to="{ name: 'SearchIndex'}">SearchIndex</RouterLink>
                 </nav>
             </div>

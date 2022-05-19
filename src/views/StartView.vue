@@ -2,6 +2,7 @@
 import { VueElement } from "@vue/runtime-dom"
 import { RouterLink, RouterView } from "vue-router"
 import BookIndex from "../components/BookIndex.vue"
+import MyLibraryVue from '../MyLibrary.vue'
 import { useCounterStore } from "../stores/pinia.js"
 
 let counter
@@ -25,12 +26,17 @@ export default {
     BookIndex,
   },
   created() {
-    
+    this.getData()
   },
   methods: {
-    setToRead(cover) {
-      // unused currently
-      console.log(cover)
+    setToRead() {
+      for (let v of this.listOne) {
+        if (MyLibraryVue.methods.checkIfRead(v[0])) {
+          console.log("READ")
+          v[2] = true
+          this.$forceUpdate()
+        }
+      }
     },
     removeBook(bookCover) {
       for (let i = 0; i < counter.listedBooks.length; i++) {
@@ -75,6 +81,18 @@ export default {
       counter.books.push({ bookCover, bookName, read })
       this.saveBooks()
     },
+    getData(){
+      counter.listedBooks = JSON.parse(localStorage.getItem("books"))
+      counter.listedReadBooks = JSON.parse(localStorage.getItem("readbooks"))
+      // Grabs all the data and creates the arrays.
+      if (counter.listedBooks === undefined){
+        counter.listedBooks = []
+        
+      }
+      if (counter.listedReadBooks === undefined){
+        counter.listedReadBooks = []
+      }
+    },
   },
 }
 </script>
@@ -83,7 +101,7 @@ export default {
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
   <header>
     <div class="wrapper">
-      <h1>Lisa's Validated Books</h1>
+      <h1>Lisa's RESOLVED</h1>
       <div id="books">
         <BookIndex
           v-for="v in listOne"
@@ -93,7 +111,7 @@ export default {
           :read="v[2]"
         />
       </div>
-      <h1>Tag Vandalization From People of openlibrary</h1>
+      <h1>Not a book</h1>
       <div id="books">
         <BookIndex
           v-for="v in listTwo"
