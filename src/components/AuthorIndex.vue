@@ -1,14 +1,15 @@
 <template>
-    <div class="author-div">
-        <div v-if="author">{{ author }}</div>
+    <div class="author-index">
+        <div v-if="authors">{{ authors }}</div>
     </div>
 </template> 
 
 <script>
 export default {
+    props: ["author"],
     data() {
         return {
-            author: null,
+            authors: null,
         }
     },
     created() {
@@ -16,10 +17,13 @@ export default {
     },
     methods: {
         async getAuthor() {
-            const resp = await fetch("https://openlibrary.org/authors/OL2162284A.json")
+            //const resp = await fetch("https://openlibrary.org/works/OL81633W.json")
+            const resp = await fetch(`https://openlibrary.org/works/${this.author}.json`)
             const data = await resp.json()
-            const author = data.name
-            this.author = author
+            let authors = data.authors.map(a => a.author.key)
+            this.authors = authors
+            //console.log(authors)
+            return `https://openlibrary.org/${this.authors}.json`
         },
     },
 }

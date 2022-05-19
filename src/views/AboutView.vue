@@ -3,7 +3,7 @@
     <h1>{{ thing }}</h1>
     <img :src="imageUrl" alt="" />
     <title-index :work="thing"></title-index>
-    <author-index></author-index>
+    <author-index :author="thing"></author-index>
     <summary-index></summary-index>
   </div>
 </template>
