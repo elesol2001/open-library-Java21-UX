@@ -25,16 +25,15 @@ function displayInfo() {
 
 <template>
     <div id="container">
-        <h1>Hi</h1>
-        <h1>Greetings</h1>
-        <h1>Hello</h1>
+
         <header>
             <div class="wrapper">
                 <nav>
                     <RouterLink to="/">Home</RouterLink>
                     <RouterLink to="/about">About</RouterLink>
+                    <RouterLink to="/start">Start</RouterLink>
                     <RouterLink to="/title">Title</RouterLink>
-                    <RouterLink to="/mylib">LIB</RouterLink>
+                    <RouterLink to="/mylib">Lib</RouterLink>
                     <RouterLink :to="{ name: 'SearchIndex'}">SearchIndex</RouterLink>
                 </nav>
             </div>

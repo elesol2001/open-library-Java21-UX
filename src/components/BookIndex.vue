@@ -16,6 +16,9 @@ export default {
             this.$read = true
             this.$forceUpdate()
         },
+        removeB(){
+            MyLibraryVue.methods.removeBook(this.bookCover);
+        }
     },
 }
 </script>
@@ -27,8 +30,9 @@ export default {
         </a>
         <div class="book-buttons">
             <input
+                @click="removeB"
                 type="image"
-                src="https://cdn.discordapp.com/attachments/957985598944194573/973833979574779924/Laggtillikon.png"
+                src="https://cdn.discordapp.com/attachments/957985598944194573/976433693298147368/Property_23.png"
             />
             <input
                 type="image"
