@@ -13,17 +13,17 @@ export default {
   data() {
     return {
       // Main books that are displayed
-      books: [],
 
       // This is what's being saved on localStorage
-      listedBooks: [],
+      
       // Not sure what the reason for the need of these "listed" arrays
       // was instead of just using the normal array
 
       // This is what's displayed for read books. Should always be the same
       // as the one in the pinia storage. Could be removed in the future
       mainReadBooks: [],
-    };
+      mainBooks: [],
+    }
   },
   components: {
     BookIndex,
@@ -47,20 +47,20 @@ export default {
     },
     saveBook(bookCover, bookName) {
       // Saves a book to the array and forwards it to localStorage
-      this.listedBooks[this.listedBooks.length] = { bookCover, bookName };
-      localStorage.setItem("books", JSON.stringify(this.listedBooks));
+      counter.listedBooks.push({ bookCover, bookName })
+      localStorage.setItem("books", JSON.stringify(counter.listedBooks));
     },
     saveReadBook(bookCover, bookName) {
       // Saves to the read book localStorage
       if (this.checkIfRead(bookCover)) {
-        return false;
+        return false
       }
-      let read = true;
-      counter.listedReadBooks[counter.listedReadBooks.length] = {
+      let read = true
+      counter.listedReadBooks.push({
         bookCover,
         bookName,
         read,
-      };
+      })
       localStorage.setItem(
         "readbooks",
         JSON.stringify(counter.listedReadBooks)
@@ -101,25 +101,26 @@ export default {
     addBook(bookCover, bookName) {
       // Adds a book to books.
       let read = this.checkIfRead(bookCover);
-      this.books.push({ bookCover, bookName, read });
+      counter.books.push({ bookCover, bookName, read });
+      this.mainBooks = counter.books;
     },
     getData() {
       // Grabs all the data and creates the arrays.
-      this.listedBooks = JSON.parse(localStorage.getItem("books"));
-      counter.listedReadBooks = JSON.parse(localStorage.getItem("readbooks"));
+      counter.listedBooks = JSON.parse(localStorage.getItem("books"))
+      counter.listedReadBooks = JSON.parse(localStorage.getItem("readbooks"))
 
       if (counter.listedReadBooks != null) {
         for (let v of counter.listedReadBooks) {
           this.addReadBook(v.bookCover, v.bookName, v.read);
         }
       } else {
-        this.listedReadBooks = [];
+        counter.listedReadBooks = []
       }
-      if (this.listedBooks != null) {
-        for (let v of this.listedBooks) {
+      if (counter.listedBooks != null) {
+        for (let v of counter.listedBooks) {
           this.addBook(v.bookCover, v.bookName, v.read);
         }
-      } else this.listedBooks = [];
+      } else counter.listedBooks = []
     },
   },
 };
@@ -131,7 +132,7 @@ export default {
       <h1>Mitt bibliotek</h1>
       <div id="books">
         <BookIndex
-          v-for="v in books"
+          v-for="v in mainBooks"
           :key="v.bookCover"
           :bookCover="v.bookCover"
           :bookName="v.bookName"
