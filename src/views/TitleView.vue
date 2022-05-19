@@ -4,6 +4,7 @@ import AuthorIndex from "../components/AuthorIndex.vue"
 import SummaryIndex from "../components/SummaryIndex.vue"
 
 export default {
+    
     components: {
         TitleIndex,
         AuthorIndex,
