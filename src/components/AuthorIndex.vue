@@ -1,3 +1,9 @@
+<template>
+    <div class="author-div">
+        <div v-if="author">{{ author }}</div>
+    </div>
+</template> 
+
 <script>
 export default {
     data() {
@@ -10,7 +16,7 @@ export default {
     },
     methods: {
         async getAuthor() {
-            const resp = await fetch("https://openlibrary.org/authors/OL26320A.json")
+            const resp = await fetch("https://openlibrary.org/authors/OL2162284A.json")
             const data = await resp.json()
             const author = data.name
             this.author = author
@@ -19,9 +25,3 @@ export default {
 }
 </script>
 
-<template>
-    <div class="author-div">
-        <!-- <button @click="getAuthor">Get author here!</button> -->
-        <div v-if="author">{{ author }}</div>
-    </div>
-</template>

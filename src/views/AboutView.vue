@@ -18,9 +18,11 @@ export default {
   props: ["thing"],
   computed: {
     imageUrl() {
-      return `https://covers.openlibrary.org/w/olid/${this.thing}-S.jpg`;
-      // 0450032205-M
+      return `https://covers.openlibrary.org/w/olid/${this.thing}-M.jpg`;
     },
+    // authorUrl() {
+    //   return `https://openlibrary.org/authors/OL26320A.json`;
+    // }
   },
   components: {
     RouterLink,
