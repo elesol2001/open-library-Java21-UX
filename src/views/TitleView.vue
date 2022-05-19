@@ -17,3 +17,4 @@ export default {
     <author-index></author-index>
     <summary-index></summary-index>
 </template>
+

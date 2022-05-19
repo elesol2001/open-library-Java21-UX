@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 export default {
     data() {
         return {
@@ -21,4 +21,4 @@ export default {
         <button @click="getSum">Get summary here!</button>
         <div v-if="sum">{{ sum }}</div>
     </div>
-</template>
+</template> -->
