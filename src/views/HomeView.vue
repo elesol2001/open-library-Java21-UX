@@ -1,7 +1,7 @@
 <template>
   <ul>
     <li v-for="t in lotsOfThings" :key="t">
-      <RouterLink :to="'/about/' + t">{{ t }}</RouterLink>
+      <RouterLink :to="'/book/' + t">{{ t }}</RouterLink>
     </li>
   </ul>
 </template>

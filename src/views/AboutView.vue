@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="book">
     <h1>{{ thing }}</h1>
     <img :src="imageUrl" alt="" />
     <title-index :work="thing"></title-index>
