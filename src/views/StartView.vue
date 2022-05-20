@@ -14,11 +14,11 @@ export default {
   data() {
     return {
       listOne: [
-        ["https://covers.openlibrary.org/b/isbn/1465408703-M.jpg", "cool book", false],
-        ["https://covers.openlibrary.org/b/isbn/1465408703-M.jpg", "cool book", false],
+        ["https://covers.openlibrary.org/w/id/6487820-M.jpg", "cool book", false],
+        ["https://covers.openlibrary.org/w/id/10860425-M.jpg", "cool book", false],
       ],
       listTwo: [
-        ["https://covers.openlibrary.org/b/isbn/1465408703-M.jpg", "cool book", false]
+        ["https://covers.openlibrary.org/w/id/6297693-M.jpg", "cool book", false]
       ],
     }
   },
