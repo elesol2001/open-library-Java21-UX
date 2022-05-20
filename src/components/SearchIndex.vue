@@ -10,7 +10,7 @@
     <div class="searchlist" v-for="searchResult in searchResults" :key="searchResult.key">
       <br /><br />
     
-      <router-link :to="{ name: 'book', params: {thing: 'searchResult.key' } }">
+      <router-link :to="{ name: 'book', params: {thing: `${searchResult.olid}` } }">
       <div class="title">{{ searchResult.title }}</div></router-link>
       <div class="name">{{ searchResult.authorName }}</div>
       <div class="publishdate">{{ searchResult.first_publish_date }}</div>
@@ -53,8 +53,11 @@ export default {
               } else {
                 
               }
+              let olid = work.key.replace(new RegExp("^/works/"),'');
+              work.olid = olid;
               return work
             })
+            console.log(this.searchResults)
           })
           
         })
