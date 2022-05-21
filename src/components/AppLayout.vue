@@ -33,27 +33,36 @@ function displayInfo() {
 </script>
 
 <template>
-  <nav id="top-navigation-bar">
-    <RouterLink to="/"><img src="@/assets/book-logo.svg" alt="Logo" /></RouterLink>
-    <input
-      type="image"
-      @click="displayInfo"
-      id="info-button"
-      src="https://cdn.discordapp.com/attachments/957985598944194573/973834193052246066/Informationikon.png"
-      alt="info"
-      width="50"
-      height="50"
-    />
-  </nav>
-  <RouterView />
-  <nav id="bottom-navigation-bar">
-    <RouterLink to="/start"><img src="@/assets/home-icon.svg" alt="Home" /></RouterLink>
-    <RouterLink to="/search"><img src="@/assets/search-icon.svg" alt="Search" /></RouterLink>
-    <RouterLink to="/mylib"><img src="@/assets/library-icon.svg" alt="Library" /></RouterLink>
-  </nav>
+  <div class="grid-container">
+
+    <nav id="top-navigation-bar">
+      <RouterLink to="/"><img src="@/assets/book-logo.svg" alt="Logo" /></RouterLink>
+      <input type="image" @click="displayInfo" id="info-button"
+        src="https://cdn.discordapp.com/attachments/957985598944194573/973834193052246066/Informationikon.png"
+        alt="info" width="50" height="50" />
+    </nav>
+    <div class=body-view>
+      <RouterView />
+    </div>
+    <nav id="bottom-navigation-bar">
+      <RouterLink to="/start"><img src="@/assets/home-icon.svg" alt="Home" /></RouterLink>
+      <RouterLink to="/searchIndex"><img src="@/assets/search-icon.svg" alt="Search" /></RouterLink>
+      <RouterLink to="/mylib"><img src="@/assets/library-icon.svg" alt="Library" /></RouterLink>
+    </nav>
+  </div>
 </template>
 
 <style>
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(1, 3fr);
+  grid-template-rows: 1fr auto 0.3fr;
+}
+
+.body-view {
+  display: flex;
+}
+
 #top-navigation-bar {
   position: sticky;
   top: 0px;
@@ -61,19 +70,13 @@ function displayInfo() {
   border: 1px solid black;
 }
 
+
 #bottom-navigation-bar {
-  position: sticky;
   bottom: 0px;
   background-color: #bfd6d9;
   border: 1px solid black;
   display: flex;
-  flex-direction: row;
   justify-content: space-evenly;
-}
-
-#container {
-  display: flex;
-  flex-direction: row;
 }
 
 #info-button {
@@ -129,6 +132,16 @@ function displayInfo() {
   #xbutton {
     margin-top: -18%;
   }
+
+  #container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #bottom-navigation-bar {
+  position: sticky;
+}
+
 }
 
 @media screen and (min-width: 900px) {
