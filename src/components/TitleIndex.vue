@@ -22,7 +22,6 @@ export default {
   methods: {
     async getTitle() {
       const resp = await fetch(`https://openlibrary.org/works/${this.work}.json`)
-      //const resp = await fetch(https://openlibrary.org/books/${this.work}.json)
       const data = await resp.json()
       const title = data.title
       this.title = title
@@ -30,6 +29,7 @@ export default {
       const sum = data.description
       this.sum = sum
     },
+
   },
 }
 </script>

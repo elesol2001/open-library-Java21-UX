@@ -4,7 +4,6 @@
     <img :src="imageUrl" alt="" />
     <title-index :work="thing"></title-index>
     <author-index :author="thing"></author-index>
-    <summary-index></summary-index>
   </div>
 </template>
 
@@ -12,7 +11,6 @@
 import { RouterLink } from "vue-router"
 import TitleIndex from "../components/TitleIndex.vue"
 import AuthorIndex from "../components/AuthorIndex.vue"
-import SummaryIndex from "../components/SummaryIndex.vue"
 
 export default {
   props: ["thing"],
@@ -20,15 +18,11 @@ export default {
     imageUrl() {
       return `https://covers.openlibrary.org/w/olid/${this.thing}-M.jpg`
     },
-    // authorUrl() {
-    //   return https://openlibrary.org/authors/OL26320A.json;
-    // }
   },
   components: {
     RouterLink,
     TitleIndex,
     AuthorIndex,
-    SummaryIndex,
   },
 };
 </script>

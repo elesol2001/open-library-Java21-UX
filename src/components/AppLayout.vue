@@ -54,21 +54,31 @@ function displayInfo() {
 </template>
 
 <style>
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(1, 3fr);
+  grid-template-rows: 1fr auto 0.3fr;
+}
+
+.body-view {
+  display: flex;
+}
+
 #top-navigation-bar {
   position: sticky;
   top: 0px;
   background-color: #f2eeeb;
 }
 
+
 #bottom-navigation-bar {
-  position: sticky;
   bottom: 0px;
   background-color: #bfd6d9;
   display: flex;
-  flex-direction: row;
   justify-content: space-evenly;
 }
 
+<<<<<<< HEAD
 #booklogo {
   padding-left: 3%;
 
@@ -79,6 +89,8 @@ function displayInfo() {
   flex-direction: row;
 }
 
+=======
+>>>>>>> refs/remotes/origin/main
 #info-button {
   margin-left: auto;
   float: right;
@@ -133,6 +145,16 @@ function displayInfo() {
   #xbutton {
     margin-top: -18%;
   }
+
+  #container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #bottom-navigation-bar {
+  position: sticky;
+}
+
 }
 
 @media screen and (min-width: 900px) {
