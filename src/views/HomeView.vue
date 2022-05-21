@@ -1,9 +1,15 @@
 <template>
+<<<<<<< HEAD
+  <main>
+    <h1>HEADER!</h1>
+  </main>
+=======
   <ul>
     <li v-for="t in lotsOfThings" :key="t">
       <RouterLink :to="'/book/' + t">{{ t }}</RouterLink>
     </li>
   </ul>
+>>>>>>> main
 </template>
 
 <script>

@@ -1,20 +1,20 @@
 <script>
-import { VueElement } from "@vue/runtime-dom";
-import { RouterLink, RouterView } from "vue-router";
-import BookIndex from "./components/BookIndex.vue";
-import { useCounterStore } from "./stores/pinia.js";
+import BookIndex from "@/components/BookIndex.vue"
+import { useCounterStore } from "@/stores/pinia.js"
 
-let counter;
+let counter
 
 export default {
   setup() {
-    counter = useCounterStore();
+    counter = useCounterStore()
   },
   data() {
     return {
       // These are just here so they can be displayed in HTML
       mainReadBooks: [],
+
       mainBooks: [],
+
     }
   },
   components: {
@@ -22,18 +22,28 @@ export default {
   },
   created() {
     //localStorage.clear()
+<<<<<<< HEAD:src/views/MyLibrary.vue
+
+    // this.saveBook("https://covers.openlibrary.org/b/isbn/0450032205-M.jpg", "cool book")
+    // this.saveReadBook("https://covers.openlibrary.org/b/isbn/0450032205-M.jpg", "cool book")
+    // this.saveBook("https://covers.openlibrary.org/b/isbn/0393964523-M.jpg", "cool book")
+    // this.saveBook("https://covers.openlibrary.org/b/isbn/0521222311-M.jpg", "cool book")
+
+    this.getData()
+=======
     /*
   this.saveBook("https://covers.openlibrary.org/w/id/9320974-M.jpg", "cool book")
 
 
    */
     this.getData();
+>>>>>>> b1c7928aaa22648c79db39e2ecfdf6e07eeb2ae4:src/MyLibrary.vue
     //this.saveBook("https://covers.openlibrary.org/b/isbn/1449313876-M.jpg", "cool book")
   },
   methods: {
     setToRead(cover) {
       // unused currently
-      console.log(cover);
+      console.log(cover)
     },
     removeBook(bookCover) {
       for (let i = 0; i < counter.books.length; i++) {
@@ -68,8 +78,11 @@ export default {
       // Adds a book to the read book pinia
       let read = true
       counter.readBooks.push({ bookCover, bookName, read })
+<<<<<<< HEAD:src/views/MyLibrary.vue
+=======
       counter.listedReadBooks = []
       counter.listedReadBooks = counter.readBooks;
+>>>>>>> b1c7928aaa22648c79db39e2ecfdf6e07eeb2ae4:src/MyLibrary.vue
       this.mainReadBooks = counter.readBooks
     },
     removeFromRead(bookCover) {
@@ -77,6 +90,12 @@ export default {
       // and saves that change
       for (let i = 0; i < counter.readBooks.length; i++) {
         if (counter.readBooks[i].bookCover == bookCover) {
+<<<<<<< HEAD:src/views/MyLibrary.vue
+          counter.readBooks.splice(i, 1)
+          counter.listedReadBooks = counter.readBooks
+          this.mainReadBooks = counter.readBooks
+          localStorage.setItem("readbooks", JSON.stringify(counter.listedReadBooks))
+=======
           counter.readBooks.splice(i, 1);
           console.log(counter.readBooks.length);
           counter.listedReadBooks = [];
@@ -87,6 +106,7 @@ export default {
             "readbooks",
             JSON.stringify(counter.listedReadBooks)
           );
+>>>>>>> b1c7928aaa22648c79db39e2ecfdf6e07eeb2ae4:src/MyLibrary.vue
         }
       }
     },
@@ -96,10 +116,10 @@ export default {
       // Sort of.
       for (const v of counter.listedReadBooks) {
         if (v.bookCover == bookCover) {
-          return true;
+          return true
         }
       }
-      return false;
+      return false
     },
     addBook(bookCover, bookName) {
       // Adds a book to books.
@@ -114,19 +134,19 @@ export default {
 
       if (counter.listedReadBooks != null) {
         for (let v of counter.listedReadBooks) {
-          this.addReadBook(v.bookCover, v.bookName, v.read);
+          this.addReadBook(v.bookCover, v.bookName, v.read)
         }
       } else {
         counter.listedReadBooks = []
       }
       if (counter.listedBooks != null) {
         for (let v of counter.listedBooks) {
-          this.addBook(v.bookCover, v.bookName, v.read);
+          this.addBook(v.bookCover, v.bookName, v.read)
         }
       } else counter.listedBooks = []
     },
   },
-};
+}
 </script>
 
 <template>
