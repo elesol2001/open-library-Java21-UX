@@ -29,7 +29,6 @@ function displayInfo() {
 </script>
 
 <template>
-<<<<<<< HEAD
   <AppLayout />
   <div id="container">
     <header>
@@ -55,33 +54,6 @@ function displayInfo() {
     />
   </div>
   <RouterView />
-=======
-    <div id="container">
-
-        <header>
-            <div class="wrapper">
-                <nav>
-                    <RouterLink to="/">Home</RouterLink>
-                    <RouterLink to="/about">About</RouterLink>
-                    <RouterLink to="/start">Start</RouterLink>
-                    <RouterLink to="/title">Title</RouterLink>
-                    <RouterLink to="/mylib">Lib</RouterLink>
-                    <RouterLink :to="{ name: 'SearchIndex'}">SearchIndex</RouterLink>
-                </nav>
-            </div>
-        </header>
-        <input
-            type="image"
-            @click="displayInfo"
-            id="info-button"
-            src="https://cdn.discordapp.com/attachments/957985598944194573/973834193052246066/Informationikon.png"
-            alt="info"
-            width="50"
-            height="50"
-        />
-    </div>
-    <RouterView />
->>>>>>> b1c7928aaa22648c79db39e2ecfdf6e07eeb2ae4
 </template>
 
 <style>

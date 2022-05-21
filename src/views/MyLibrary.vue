@@ -12,9 +12,7 @@ export default {
     return {
       // These are just here so they can be displayed in HTML
       mainReadBooks: [],
-
       mainBooks: [],
-
     }
   },
   components: {
@@ -22,7 +20,6 @@ export default {
   },
   created() {
     //localStorage.clear()
-<<<<<<< HEAD:src/views/MyLibrary.vue
 
     // this.saveBook("https://covers.openlibrary.org/b/isbn/0450032205-M.jpg", "cool book")
     // this.saveReadBook("https://covers.openlibrary.org/b/isbn/0450032205-M.jpg", "cool book")
@@ -30,15 +27,6 @@ export default {
     // this.saveBook("https://covers.openlibrary.org/b/isbn/0521222311-M.jpg", "cool book")
 
     this.getData()
-=======
-    /*
-  this.saveBook("https://covers.openlibrary.org/w/id/9320974-M.jpg", "cool book")
-
-
-   */
-    this.getData();
->>>>>>> b1c7928aaa22648c79db39e2ecfdf6e07eeb2ae4:src/MyLibrary.vue
-    //this.saveBook("https://covers.openlibrary.org/b/isbn/1449313876-M.jpg", "cool book")
   },
   methods: {
     setToRead(cover) {
@@ -48,41 +36,32 @@ export default {
     removeBook(bookCover) {
       for (let i = 0; i < counter.books.length; i++) {
         if (counter.books[i].bookCover == bookCover) {
-          counter.books.splice(i, 1);
+          counter.books.splice(i, 1)
 
-          counter.listedBooks = [];
-          counter.listedBooks = counter.books;
-          this.mainBooks = counter.books;
+          counter.listedBooks = []
+          counter.listedBooks = counter.books
+          this.mainBooks = counter.books
 
-          localStorage.setItem(
-            "books",
-            JSON.stringify(counter.listedBooks)
-          );
+          localStorage.setItem("books", JSON.stringify(counter.listedBooks))
         }
       }
     },
     saveBook(bookCover, bookName) {
       // Saves a book to the array and forwards it to localStorage
       counter.listedBooks.push({ bookCover, bookName })
-      localStorage.setItem("books", JSON.stringify(counter.listedBooks));
+      localStorage.setItem("books", JSON.stringify(counter.listedBooks))
     },
     saveReadBook() {
       // Saves to the read book localStorage
-      console.log(counter.readBooks.length);
-      localStorage.setItem(
-        "readbooks",
-        JSON.stringify(counter.listedReadBooks)
-      );
+      console.log(counter.readBooks.length)
+      localStorage.setItem("readbooks", JSON.stringify(counter.listedReadBooks))
     },
     addReadBook(bookCover, bookName) {
       // Adds a book to the read book pinia
       let read = true
       counter.readBooks.push({ bookCover, bookName, read })
-<<<<<<< HEAD:src/views/MyLibrary.vue
-=======
       counter.listedReadBooks = []
-      counter.listedReadBooks = counter.readBooks;
->>>>>>> b1c7928aaa22648c79db39e2ecfdf6e07eeb2ae4:src/MyLibrary.vue
+      counter.listedReadBooks = counter.readBooks
       this.mainReadBooks = counter.readBooks
     },
     removeFromRead(bookCover) {
@@ -90,23 +69,13 @@ export default {
       // and saves that change
       for (let i = 0; i < counter.readBooks.length; i++) {
         if (counter.readBooks[i].bookCover == bookCover) {
-<<<<<<< HEAD:src/views/MyLibrary.vue
           counter.readBooks.splice(i, 1)
+          console.log(counter.readBooks.length)
+          counter.listedReadBooks = []
           counter.listedReadBooks = counter.readBooks
           this.mainReadBooks = counter.readBooks
-          localStorage.setItem("readbooks", JSON.stringify(counter.listedReadBooks))
-=======
-          counter.readBooks.splice(i, 1);
-          console.log(counter.readBooks.length);
-          counter.listedReadBooks = [];
-          counter.listedReadBooks = counter.readBooks;
-          this.mainReadBooks = counter.readBooks;
 
-          localStorage.setItem(
-            "readbooks",
-            JSON.stringify(counter.listedReadBooks)
-          );
->>>>>>> b1c7928aaa22648c79db39e2ecfdf6e07eeb2ae4:src/MyLibrary.vue
+          localStorage.setItem("readbooks", JSON.stringify(counter.listedReadBooks))
         }
       }
     },
@@ -123,9 +92,9 @@ export default {
     },
     addBook(bookCover, bookName) {
       // Adds a book to books.
-      let read = this.checkIfRead(bookCover);
-      counter.books.push({ bookCover, bookName, read });
-      this.mainBooks = counter.books;
+      let read = this.checkIfRead(bookCover)
+      counter.books.push({ bookCover, bookName, read })
+      this.mainBooks = counter.books
     },
     getData() {
       // Grabs all the data and creates the arrays.
@@ -150,7 +119,7 @@ export default {
 </script>
 
 <template>
-  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
   <header>
     <div class="wrapper">
       <h1>Mitt bibliotek</h1>

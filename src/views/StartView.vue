@@ -2,7 +2,7 @@
 import { VueElement } from "@vue/runtime-dom"
 import { RouterLink, RouterView } from "vue-router"
 import BookIndex from "../components/BookIndex.vue"
-import MyLibraryVue from '../MyLibrary.vue'
+import MyLibraryVue from "../views/MyLibrary.vue"
 import { useCounterStore } from "../stores/pinia.js"
 
 let counter
@@ -17,9 +17,7 @@ export default {
         ["https://covers.openlibrary.org/w/id/6487820-M.jpg", "cool book", false],
         ["https://covers.openlibrary.org/w/id/10860425-M.jpg", "cool book", false],
       ],
-      listTwo: [
-        ["https://covers.openlibrary.org/w/id/6297693-M.jpg", "cool book", false]
-      ],
+      listTwo: [["https://covers.openlibrary.org/w/id/6297693-M.jpg", "cool book", false]],
     }
   },
   components: {
@@ -81,15 +79,14 @@ export default {
       counter.books.push({ bookCover, bookName, read })
       this.saveBooks()
     },
-    getData(){
+    getData() {
       counter.listedBooks = JSON.parse(localStorage.getItem("books"))
       counter.listedReadBooks = JSON.parse(localStorage.getItem("readbooks"))
       // Grabs all the data and creates the arrays.
-      if (counter.listedBooks === undefined){
+      if (counter.listedBooks === undefined) {
         counter.listedBooks = []
-        
       }
-      if (counter.listedReadBooks === undefined){
+      if (counter.listedReadBooks === undefined) {
         counter.listedReadBooks = []
       }
     },
@@ -103,23 +100,11 @@ export default {
     <div class="wrapper">
       <h1>Lisa's RESOLVED</h1>
       <div id="books">
-        <BookIndex
-          v-for="v in listOne"
-          :key="v[0]"
-          :bookCover="v[0]"
-          :bookName="v[1]"
-          :read="v[2]"
-        />
+        <BookIndex v-for="v in listOne" :key="v[0]" :bookCover="v[0]" :bookName="v[1]" :read="v[2]" />
       </div>
       <h1>Not a book</h1>
       <div id="books">
-        <BookIndex
-          v-for="v in listTwo"
-          :key="v[0]"
-          :bookCover="v[0]"
-          :bookName="v[1]"
-          :read="v[2]"
-        />
+        <BookIndex v-for="v in listTwo" :key="v[0]" :bookCover="v[0]" :bookName="v[1]" :read="v[2]" />
       </div>
       <h1>david</h1>
       <div id="books">
@@ -131,7 +116,6 @@ export default {
           :read="v.read"
         />
       </div>
-
     </div>
   </header>
 

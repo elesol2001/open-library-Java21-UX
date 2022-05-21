@@ -1,5 +1,5 @@
 <script>
-import MyLibraryVue from "@/views/MyLibrary.vue"
+import MyLibraryVue from "../views/MyLibrary.vue"
 export default {
   props: ["bookCover", "bookName", "read"],
   methods: {
@@ -11,36 +11,28 @@ export default {
         return false
       }
 
-<<<<<<< HEAD
       MyLibraryVue.methods.addReadBook(this.bookCover, this.bookName)
       MyLibraryVue.methods.saveReadBook(this.bookCover, this.bookName)
       this.$read = true
       this.$forceUpdate()
-=======
-            MyLibraryVue.methods.addReadBook(this.bookCover, this.bookName)
-            MyLibraryVue.methods.saveReadBook(this.bookCover, this.bookName)
-            this.$read = true
-            this.$forceUpdate()
-        },
-        removeB(){
-            MyLibraryVue.methods.removeBook(this.bookCover);
-        }
->>>>>>> b1c7928aaa22648c79db39e2ecfdf6e07eeb2ae4
+    },
+    removeB() {
+      MyLibraryVue.methods.removeBook(this.bookCover)
     },
   },
 }
 </script>
 
 <template>
-<<<<<<< HEAD
   <div class="book-layout">
     <a href="index.html">
       <img class="cover" :title="bookName" :src="bookCover" />
     </a>
     <div class="book-buttons">
       <input
+        @click="removeB"
         type="image"
-        src="https://cdn.discordapp.com/attachments/957985598944194573/973833979574779924/Laggtillikon.png"
+        src="https://cdn.discordapp.com/attachments/957985598944194573/976433693298147368/Property_23.png"
       />
       <input
         type="image"
@@ -54,31 +46,6 @@ export default {
         v-else
         src="https://cdn.discordapp.com/attachments/957985598944194573/973833138679742464/bookunread.png"
       />
-=======
-    <div class="book-layout">
-        <a href="index.html">
-            <img class="cover" :title="bookName" :src="bookCover" />
-        </a>
-        <div class="book-buttons">
-            <input
-                @click="removeB"
-                type="image"
-                src="https://cdn.discordapp.com/attachments/957985598944194573/976433693298147368/Property_23.png"
-            />
-            <input
-                type="image"
-                @click="addRead"
-                v-if="read || this.$read"
-                src="https://cdn.discordapp.com/attachments/957985598944194573/973833679895928842/bookread.png"
-            />
-            <input
-                type="image"
-                @click="addRead"
-                v-else
-                src="https://cdn.discordapp.com/attachments/957985598944194573/973833138679742464/bookunread.png"
-            />
-        </div>
->>>>>>> b1c7928aaa22648c79db39e2ecfdf6e07eeb2ae4
     </div>
   </div>
 </template>

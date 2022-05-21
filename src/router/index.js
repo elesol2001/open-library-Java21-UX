@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router"
 import HomeView from "../views/HomeView.vue"
 import SearchIndex from "../components/SearchIndex.vue"
-import MyLibrary from "../MyLibrary.vue"
+import MyLibrary from "../views/MyLibrary.vue"
 import StartView from "../views/StartView.vue"
 
 const router = createRouter({
@@ -11,11 +11,6 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: HomeView,
-    },
-    {
-      path: "/title",
-      name: "title",
-      component: () => import("../views/TitleView.vue"),
     },
     {
       path: "/book/:thing",
