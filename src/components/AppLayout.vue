@@ -47,7 +47,7 @@ function displayInfo() {
   </nav>
   <RouterView />
   <nav id="bottom-navigation-bar">
-    <RouterLink to="/"><img src="@/assets/home-icon.svg" alt="Home" /></RouterLink>
+    <RouterLink to="/start"><img src="@/assets/home-icon.svg" alt="Home" /></RouterLink>
     <RouterLink to="/search"><img src="@/assets/search-icon.svg" alt="Search" /></RouterLink>
     <RouterLink to="/mylib"><img src="@/assets/library-icon.svg" alt="Library" /></RouterLink>
   </nav>
