@@ -10,15 +10,7 @@ export default {
   },
   data() {
     return {
-      // Main books that are displayed
-
-      // This is what's being saved on localStorage
-      
-      // Not sure what the reason for the need of these "listed" arrays
-      // was instead of just using the normal array
-
-      // This is what's displayed for read books. Should always be the same
-      // as the one in the pinia storage. Could be removed in the future
+      // These are just here so they can be displayed in HTML
       mainReadBooks: [],
 
       mainBooks: [],
@@ -30,6 +22,7 @@ export default {
   },
   created() {
     //localStorage.clear()
+<<<<<<< HEAD:src/views/MyLibrary.vue
 
     // this.saveBook("https://covers.openlibrary.org/b/isbn/0450032205-M.jpg", "cool book")
     // this.saveReadBook("https://covers.openlibrary.org/b/isbn/0450032205-M.jpg", "cool book")
@@ -37,6 +30,14 @@ export default {
     // this.saveBook("https://covers.openlibrary.org/b/isbn/0521222311-M.jpg", "cool book")
 
     this.getData()
+=======
+    /*
+  this.saveBook("https://covers.openlibrary.org/w/id/9320974-M.jpg", "cool book")
+
+
+   */
+    this.getData();
+>>>>>>> b1c7928aaa22648c79db39e2ecfdf6e07eeb2ae4:src/MyLibrary.vue
     //this.saveBook("https://covers.openlibrary.org/b/isbn/1449313876-M.jpg", "cool book")
   },
   methods: {
@@ -44,22 +45,30 @@ export default {
       // unused currently
       console.log(cover)
     },
+    removeBook(bookCover) {
+      for (let i = 0; i < counter.books.length; i++) {
+        if (counter.books[i].bookCover == bookCover) {
+          counter.books.splice(i, 1);
+
+          counter.listedBooks = [];
+          counter.listedBooks = counter.books;
+          this.mainBooks = counter.books;
+
+          localStorage.setItem(
+            "books",
+            JSON.stringify(counter.listedBooks)
+          );
+        }
+      }
+    },
     saveBook(bookCover, bookName) {
       // Saves a book to the array and forwards it to localStorage
       counter.listedBooks.push({ bookCover, bookName })
       localStorage.setItem("books", JSON.stringify(counter.listedBooks));
     },
-    saveReadBook(bookCover, bookName) {
+    saveReadBook() {
       // Saves to the read book localStorage
-      if (this.checkIfRead(bookCover)) {
-        return false
-      }
-      let read = true
-      counter.listedReadBooks.push({
-        bookCover,
-        bookName,
-        read,
-      })
+      console.log(counter.readBooks.length);
       localStorage.setItem(
         "readbooks",
         JSON.stringify(counter.listedReadBooks)
@@ -69,6 +78,11 @@ export default {
       // Adds a book to the read book pinia
       let read = true
       counter.readBooks.push({ bookCover, bookName, read })
+<<<<<<< HEAD:src/views/MyLibrary.vue
+=======
+      counter.listedReadBooks = []
+      counter.listedReadBooks = counter.readBooks;
+>>>>>>> b1c7928aaa22648c79db39e2ecfdf6e07eeb2ae4:src/MyLibrary.vue
       this.mainReadBooks = counter.readBooks
     },
     removeFromRead(bookCover) {
@@ -76,10 +90,23 @@ export default {
       // and saves that change
       for (let i = 0; i < counter.readBooks.length; i++) {
         if (counter.readBooks[i].bookCover == bookCover) {
+<<<<<<< HEAD:src/views/MyLibrary.vue
           counter.readBooks.splice(i, 1)
           counter.listedReadBooks = counter.readBooks
           this.mainReadBooks = counter.readBooks
           localStorage.setItem("readbooks", JSON.stringify(counter.listedReadBooks))
+=======
+          counter.readBooks.splice(i, 1);
+          console.log(counter.readBooks.length);
+          counter.listedReadBooks = [];
+          counter.listedReadBooks = counter.readBooks;
+          this.mainReadBooks = counter.readBooks;
+
+          localStorage.setItem(
+            "readbooks",
+            JSON.stringify(counter.listedReadBooks)
+          );
+>>>>>>> b1c7928aaa22648c79db39e2ecfdf6e07eeb2ae4:src/MyLibrary.vue
         }
       }
     },
@@ -123,6 +150,7 @@ export default {
 </script>
 
 <template>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
   <header>
     <div class="wrapper">
       <h1>Mitt bibliotek</h1>
@@ -152,6 +180,10 @@ export default {
 </template>
 
 <style>
+body {
+  font-family: "Montserrat";
+}
+
 #books {
   display: flex;
   overflow-x: auto;
