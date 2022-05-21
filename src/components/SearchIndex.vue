@@ -61,12 +61,35 @@ export default {
           })
         })
     },
+    findByTitle() {
+      let title = encodeURIComponent(this.searchfield)
 
+      return fetch(`http://openlibrary.org/search.json?title=${title}`)
+        .then((res) => {
+          return res.json()
+        })
+        .then((json) => {
+          console.log(json)
+
+          this.searchResults = json.docs.map((work) => {
+            if ("author_name" in work) {
+              work.authorName = work.author_name[0]
+            }
+            let olid = work.key.replace(new RegExp("^/works/"), "")
+            work.olid = olid
+            let coverId = work.cover_i
+            work.coverurl = "https://covers.openlibrary.org/w/id/" + coverId + "-M.jpg"
+            work.first_publish_date = work.first_publish_year
+
+            return work
+          })
+        })
+    },
     findBooksByAuthorKey(key) {
       const LIMIT = 100
       let safeKey = encodeURIComponent(key)
       console.log(key)
-      // query for works by author based on the authors key
+      
       return fetch(`https://openlibrary.org/authors/${safeKey}/works.json?limit=${LIMIT}`)
         .then((res) => {
           console.log(res)

@@ -34,7 +34,7 @@ function displayInfo() {
 
 <template>
   <nav id="top-navigation-bar">
-    <RouterLink to="/"><img src="@/assets/book-logo.svg" alt="Logo" /></RouterLink>
+    <RouterLink id="booklogo" to="/"><img src="@/assets/book-logo.svg" alt="Logo" /></RouterLink>
     <input
       type="image"
       @click="displayInfo"
@@ -58,17 +58,20 @@ function displayInfo() {
   position: sticky;
   top: 0px;
   background-color: #f2eeeb;
-  border: 1px solid black;
 }
 
 #bottom-navigation-bar {
   position: sticky;
   bottom: 0px;
   background-color: #bfd6d9;
-  border: 1px solid black;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+
+#booklogo {
+  padding-left: 3%;
+
 }
 
 #container {
@@ -79,6 +82,7 @@ function displayInfo() {
 #info-button {
   margin-left: auto;
   float: right;
+  color: rgba(89, 84, 86, 1);
 }
 
 #popup {
