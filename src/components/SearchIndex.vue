@@ -1,8 +1,11 @@
 <template>
-  <div>
-    <div class="header">
-      <input v-model="searchfield" placeholder="search title, author, genre" />
+  <div class="searchpage">
+    <div id="rectangle"></div>
+    <div>
+      <input id="searchfield" v-model="searchfield" placeholder="search title, author, genre" />
       <br />{{ searchfield }}<br />
+    </div>
+    <div>
       <button @click="findByAuthor">Author</button>
       <button @click="findByTitle">Title</button>
       <button @click="findByGenre">Genre</button>
