@@ -33,23 +33,24 @@ function displayInfo() {
 </script>
 
 <template>
-  <div class="grid-container">
-
-    <nav id="top-navigation-bar">
-      <RouterLink to="/"><img src="@/assets/book-logo.svg" alt="Logo" /></RouterLink>
-      <input type="image" @click="displayInfo" id="info-button"
-        src="https://cdn.discordapp.com/attachments/957985598944194573/973834193052246066/Informationikon.png"
-        alt="info" width="50" height="50" />
-    </nav>
-    <div class=body-view>
-      <RouterView />
-    </div>
-    <nav id="bottom-navigation-bar">
-      <RouterLink to="/start"><img src="@/assets/home-icon.svg" alt="Home" /></RouterLink>
-      <RouterLink to="/searchIndex"><img src="@/assets/search-icon.svg" alt="Search" /></RouterLink>
-      <RouterLink to="/mylib"><img src="@/assets/library-icon.svg" alt="Library" /></RouterLink>
-    </nav>
-  </div>
+  <nav id="top-navigation-bar">
+    <RouterLink to="/"><img src="@/assets/book-logo.svg" alt="Logo" /></RouterLink>
+    <input
+      type="image"
+      @click="displayInfo"
+      id="info-button"
+      src="https://cdn.discordapp.com/attachments/957985598944194573/973834193052246066/Informationikon.png"
+      alt="info"
+      width="50"
+      height="50"
+    />
+  </nav>
+  <RouterView />
+  <nav id="bottom-navigation-bar">
+    <RouterLink to="/start"><img src="@/assets/home-icon.svg" alt="Home" /></RouterLink>
+    <RouterLink to="/searchIndex"><img src="@/assets/search-icon.svg" alt="Search" /></RouterLink>
+    <RouterLink to="/mylib"><img src="@/assets/library-icon.svg" alt="Library" /></RouterLink>
+  </nav>
 </template>
 
 <style>
