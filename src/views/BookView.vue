@@ -8,7 +8,6 @@
 </template>
 
 <script>
-import { RouterLink } from "vue-router"
 import TitleIndex from "../components/TitleIndex.vue"
 import AuthorIndex from "../components/AuthorIndex.vue"
 
@@ -20,9 +19,8 @@ export default {
     },
   },
   components: {
-    RouterLink,
     TitleIndex,
     AuthorIndex,
   },
-};
+}
 </script>
