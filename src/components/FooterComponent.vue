@@ -19,8 +19,8 @@ export default {}
   height: 10%;
   width: 100%;
   position: relative;
-  margin-top: 70%;
-  padding-bottom: 25%;
+  margin-top: 100%;
+  padding-bottom: 35%;
   bottom: 0;
   background-color: #bfd6d9;
 }
@@ -46,7 +46,7 @@ export default {}
 
 @media screen and (min-height: 800px){
 #bottom-footer {
-    margin-top: 100%;
+    margin-top: 35rem;
   }
 }
 @media screen and (min-width: 700px) {
@@ -56,7 +56,7 @@ export default {}
 
   #bottom-footer {
     padding-bottom: 4%;
-    margin-top: 25%;
+    margin-top: 29%;
   }
 
   #book-footer {

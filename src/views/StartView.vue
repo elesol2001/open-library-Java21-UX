@@ -13,10 +13,23 @@ export default {
   data() {
     return {
       listOne: [
-        ["https://covers.openlibrary.org/w/id/6487820-M.jpg", "cool book", false],
-        ["https://covers.openlibrary.org/w/id/10860425-M.jpg", "cool book", false],
+        ["https://covers.openlibrary.org/w/id/7013717-M.jpg", "The Shining", false, "OL81633W"],
+        ["https://covers.openlibrary.org/w/id/9320974-M.jpg", "It", false, "OL81613W"],
+        ["https://covers.openlibrary.org/w/id/8567417-M.jpg", "The Exorcist", false, "OL927215W"],
+        ["https://covers.openlibrary.org/w/id/10867992-M.jpg", "Harvest Home", false, "OL24344884W"],
+        ["https://covers.openlibrary.org/w/id/8274288-M.jpg", "Thinner", false, "OL149210W"],
       ],
-      listTwo: [["https://covers.openlibrary.org/w/id/6297693-M.jpg", "cool book", false]],
+      listTwo: [
+        ["https://covers.openlibrary.org/w/id/106193-M.jpg", "Dracula", false, "OL85892W"],
+        ["https://covers.openlibrary.org/w/id/10872750-M.jpg", "Frankenstein", false, "OL450063W"],
+        ["https://covers.openlibrary.org/w/id/11172296-M.jpg", "And Then There Were None", false, "OL472814W"],
+        ["https://covers.openlibrary.org/w/id/320591-M.jpg", "Hans Andersen's Fairy Tales", false, "OL16249171W"],
+      ],
+      listThree: [
+        ["https://covers.openlibrary.org/w/id/9608215-M.jpg", "Canadian architecture, Prince Edward Island province", false, "OL3778999W"],
+        ["https://covers.openlibrary.org/w/id/3697547-M.jpg", "Daughter of China", false, "OL25722W"],
+        ["https://covers.openlibrary.org/w/id/8240310-M.jpg", "Clouds", false, "OL20247W"],
+      ],
       username: "",
     }
   },
@@ -111,23 +124,17 @@ export default {
     <h1 id="welcome">Välkommen till Book, {{ this.username }}!</h1>
     <div class="wrapper">
       <h1>För dig</h1>
-      <h1>Lisa's RESOLVED</h1>
+      <h1>Ett besök under filten</h1>
       <div id="books">
         <BookIndex v-for="v in listOne" :key="v[0]" :bookCover="v[0]" :bookName="v[1]" :read="v[2]" />
       </div>
-      <h1>Not a book</h1>
+      <h1>Ej glömda genom generationer</h1>
       <div id="books">
         <BookIndex v-for="v in listTwo" :key="v[0]" :bookCover="v[0]" :bookName="v[1]" :read="v[2]" />
       </div>
-      <h1>david</h1>
+      <h1>Vad laptopen ville ha</h1>
       <div id="books">
-        <BookIndex
-          v-for="v in listTwo"
-          :key="v.bookCover"
-          :bookCover="v.bookCover"
-          :bookName="v.bookName"
-          :read="v.read"
-        />
+        <BookIndex v-for="v in listThree" :key="v[0]" :bookCover="v[0]" :bookName="v[1]" :read="v[2]" />
       </div>
     </div>
     <footer-component></footer-component>
