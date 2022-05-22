@@ -29,8 +29,15 @@ export default {
 
         console.log("New book added")
         console.log(counter.books)
+      } else {
+        for (let i = 0; i < counter.books.length; i++) {
+          if (this.book.title === counter.books[i].title) {
+            counter.books.splice(i, 1)
+
+            console.log("Book removed")
+          }
+        }
       }
-      // need to add else-statement to remove book on off-toggle
 
       this.isBookAdded = !this.isBookAdded
     },
