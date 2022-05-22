@@ -1,16 +1,14 @@
 import { createRouter, createWebHistory } from "vue-router"
-import HomeView from "../views/HomeView.vue"
 import SearchIndex from "../components/SearchIndex.vue"
 import MyLibrary from "../views/MyLibrary.vue"
-import StartView from "../views/StartView.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: "/",
-      name: "home",
-      component: HomeView,
+      name: "start",
+      component: () => import("../views/StartView.vue"),
     },
     {
       path: "/book/:thing",
@@ -19,9 +17,9 @@ const router = createRouter({
       component: () => import("../views/BookView.vue"),
     },
     {
-      path: "/start",
+      path: "/",
       name: "start",
-      component: StartView,
+      component: () => import("../views/StartView.vue"),
     },
     {
       path: "/mylib",
