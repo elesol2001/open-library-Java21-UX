@@ -1,6 +1,4 @@
 <script>
-import { VueElement } from "@vue/runtime-dom"
-import { RouterLink, RouterView } from "vue-router"
 import BookIndex from "../components/BookIndex.vue"
 import MyLibraryVue from "../views/MyLibrary.vue"
 import { useCounterStore } from "../stores/pinia.js"
@@ -131,8 +129,6 @@ export default {
       </div>
     </div>
   </header>
-
-  <RouterView />
 </template>
 
 <style>

@@ -9,12 +9,6 @@ export default {
     AuthorIndex,
     SummaryIndex,
   },
-    
-    components: {
-        TitleIndex,
-        AuthorIndex,
-        SummaryIndex,
-    },
 }
 </script>
 
@@ -23,4 +17,3 @@ export default {
   <author-index></author-index>
   <summary-index></summary-index>
 </template>
-

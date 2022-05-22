@@ -202,8 +202,6 @@ export default {
       </div>
     </div>
   </header>
-
-  <RouterView />
 </template>
 
 <style>
@@ -226,11 +224,11 @@ body {
   height: 10%;
   font-size: 1.5rem;
   text-align: center;
-  border-style: 1cm line #8AA1A6;
+  border-style: 1cm line #8aa1a6;
 }
 
 #accept-user {
-  background-color: #BFD6D9;
+  background-color: #bfd6d9;
   border-radius: 5%;
   margin: 0 auto;
   margin-top: 5%;
