@@ -155,10 +155,6 @@ function displayInfo() {
     flex-direction: row;
   }
 
-  #top-navigation-logo {
-    display: none;
-  }
-
   #bottom-navigation-bar {
     position: sticky;
   }
