@@ -10,17 +10,21 @@
       <button @click="findByTitle">Title</button>
       <button @click="findByGenre">Genre</button>
     </div>
-    <div class="searchlist" v-for="searchResult in searchResults" :key="searchResult.key">
-      <br /><br />
 
-      <router-link :to="{ name: 'book', params: { thing: `${searchResult.olid}` } }">
-        <div class="title">{{ searchResult.title }}</div></router-link
-      >
-      <div class="name">{{ searchResult.authorName }}</div>
-      <div class="publishdate">{{ searchResult.first_publish_date }}</div>
-      <div class="cover"><img :src="searchResult.coverurl" /></div>
+    <div class="searchlist" v-for="searchResult in searchResults" :key="searchResult.key">
+      <div class="search-list-item">
+        <div class="cover"><img :src="searchResult.coverurl" /></div>
+        <div class="book-meta-data">
+          <router-link :to="{ name: 'book', params: { thing: `${searchResult.olid}` } }">
+            <div class="title">{{ searchResult.title }}</div></router-link
+          >
+
+          <div class="name">{{ searchResult.authorName }}</div>
+          <div class="publishdate">{{ searchResult.first_publish_date }}</div>
+        </div>
+        <div><AddBook /></div>
+      </div>
     </div>
-    <br /><br />
   </div>
 
   <AddBook />
@@ -132,5 +136,21 @@ export default {
   background: #ffffff;
   border: 2px solid #8aa1a6;
   border-radius: 20px;
+}
+
+.searchlist {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.search-list-item > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.search-list-item > .book-meta-data {
+  display: flex;
+  flex-direction: column;
 }
 </style>
