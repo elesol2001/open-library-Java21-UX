@@ -106,4 +106,18 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+
+#searchfield {
+  box-sizing:border-box;
+  position:absolute;
+  height:7%;
+  left: 49.22%;
+  right: 12.76%;
+  top: 3%;
+  bottom: 23.14%;
+  text-indent: 10%;
+  background: #FFFFFF;
+  border: 2px solid #8AA1A6;
+  border-radius: 20px;
+}</style>

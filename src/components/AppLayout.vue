@@ -70,6 +70,9 @@ function displayInfo() {
   top: 0px;
   background-color: #f2eeeb;
 }
+#booklogo {
+  padding-left: 4%;
+}
 
 #bottom-navigation-bar {
   bottom: 0px;
