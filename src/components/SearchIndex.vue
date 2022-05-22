@@ -24,12 +24,14 @@
   </div>
 
   <AddBook />
+  <IsBookRead />
   <footer-component></footer-component>
 </template>
 
 <script>
-import FooterComponent from '../components/FooterComponent.vue'
+import FooterComponent from "../components/FooterComponent.vue"
 import AddBook from "./AddBook.vue"
+import IsBookRead from "./IsBookRead.vue"
 
 export default {
   props: ["searchResults", "searchfield"],
@@ -40,6 +42,7 @@ export default {
   },
   components: {
     AddBook,
+    IsBookRead,
     FooterComponent,
   },
   methods: {
