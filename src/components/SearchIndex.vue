@@ -120,4 +120,5 @@ export default {
   background: #FFFFFF;
   border: 2px solid #8AA1A6;
   border-radius: 20px;
-}</style>
+}
+</style>

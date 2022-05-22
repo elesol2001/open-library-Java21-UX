@@ -36,17 +36,18 @@ function displayInfo() {
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
   <nav id="top-navigation-bar">
     <RouterLink id="booklogo" to="/"><img src="@/assets/book-logo.svg" alt="Logo" /></RouterLink>
-    <input
-      type="image"
-      @click="displayInfo"
-      id="info-button"
-      src="https://cdn.discordapp.com/attachments/957985598944194573/973834193052246066/Informationikon.png"
-      alt="info"
-      width="50"
-      height="50"
-    />
+
+    <div id="top-navigation-logo">
+      <RouterLink to="/searchIndex"><img src="@/assets/search-icon.svg" alt="Search" /></RouterLink>
+      <RouterLink to="/mylib"><img src="@/assets/library-icon.svg" alt="Library" /></RouterLink>
+    </div>
+
+    <input type="image" @click="displayInfo" id="info-button"
+      src="https://cdn.discordapp.com/attachments/957985598944194573/973834193052246066/Informationikon.png" alt="info"/>
   </nav>
+
   <RouterView />
+
   <nav id="bottom-navigation-bar">
     <RouterLink to="/"><img src="@/assets/home-icon.svg" alt="Home" /></RouterLink>
     <RouterLink to="/searchIndex"><img src="@/assets/search-icon.svg" alt="Search" /></RouterLink>
@@ -70,11 +71,27 @@ function displayInfo() {
   top: 0px;
   background-color: #f2eeeb;
 }
+
 #booklogo {
   padding-left: 4%;
 }
 
+#top-navigation-logo {
+  background-color: #f2eeeb;
+  width: 10%;
+  position: absolute;
+  right: 50px;
+  top: 1em;
+}
+
+#info-button {
+  top: 1em;
+  width: 50px;
+  height: 50px;
+}
+
 #bottom-navigation-bar {
+  /* bottom makes the nav-bar not movable*/
   bottom: 0px;
   position: fixed;
   width: 100%;
@@ -156,6 +173,14 @@ function displayInfo() {
 
   #xbutton {
     margin-top: -20%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+
+  /* bottom nav will not be visible */
+  #bottom-navigation-bar {
+    display: none;
   }
 }
 </style>

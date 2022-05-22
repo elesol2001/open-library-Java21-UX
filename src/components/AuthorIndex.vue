@@ -1,6 +1,5 @@
 <template>
     <div class="author-index">
-        <!-- <div v-if="authors">{{ authors }}</div> -->
         <div v-if="authors">{{ authorName }}</div>
     </div>
 </template> 
@@ -29,7 +28,7 @@ export default {
                 const dataAuthor = await respAuthor.json()
                 let authorName = dataAuthor.name
                 this.authorName.push(authorName)
-                console.log(authorName)
+            console.log(authorName)
             }
         },
     },
