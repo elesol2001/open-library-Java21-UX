@@ -2,8 +2,12 @@
   <div class="book">
     <h1>{{ thing }}</h1>
     <img :src="imageUrl" alt="" />
-    <title-index :work="thing"></title-index>
-    <author-index :author="thing"></author-index>
+    <div id="title-div">
+      <title-index :work="thing"></title-index>
+    </div>
+    <div id="author-div">
+      <author-index :author="thing"></author-index>
+    </div>
   </div>
   <footer-component></footer-component>
 </template>
@@ -27,3 +31,41 @@ export default {
   },
 }
 </script>
+
+<style>
+.book {
+  display: flex;
+}
+
+.book h1 {
+  position: absolute;
+  margin-top: 5%;
+  left: 50%;
+}
+
+.book img {
+  display: flex;
+  margin-top: 5%;
+  margin-left: 20%;
+}
+
+.book #title-div {
+  position: absolute;
+  margin-top: 10%;
+  left: 50%;
+}
+.book #author-div {
+  position: absolute;
+  margin-top: 15%;
+  left: 50%;
+}
+
+@media screen and (min-width: 500px) and (min-height: 700px) {
+  .book {
+    margin: auto;
+    width: 50%;
+    padding: 1em;
+    text-align: center;
+  }
+}
+</style>
