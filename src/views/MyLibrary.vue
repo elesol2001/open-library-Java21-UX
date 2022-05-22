@@ -24,10 +24,10 @@ export default {
   created() {
     //localStorage.clear()
 
-    // this.saveBook("https://covers.openlibrary.org/b/isbn/0450032205-M.jpg", "cool book")
-    // this.saveReadBook("https://covers.openlibrary.org/b/isbn/0450032205-M.jpg", "cool book")
-    // this.saveBook("https://covers.openlibrary.org/b/isbn/0393964523-M.jpg", "cool book")
-    // this.saveBook("https://covers.openlibrary.org/b/isbn/0521222311-M.jpg", "cool book")
+    this.saveBook("https://covers.openlibrary.org/b/isbn/0450032205-M.jpg", "cool book")
+    this.saveReadBook("https://covers.openlibrary.org/b/isbn/0450032205-M.jpg", "cool book")
+    this.saveBook("https://covers.openlibrary.org/b/isbn/0393964523-M.jpg", "cool book")
+    this.saveBook("https://covers.openlibrary.org/b/isbn/0521222311-M.jpg", "cool book")
 
     this.getData()
     this.username = counter.username
