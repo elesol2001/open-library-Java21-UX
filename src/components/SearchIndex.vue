@@ -22,15 +22,22 @@
     </div>
     <br /><br />
   </div>
+
+  <AddBook />
 </template>
 
 <script>
+import AddBook from "./AddBook.vue"
+
 export default {
   props: ["searchResults", "searchfield"],
   data() {
     return {
       searchResults: [],
     }
+  },
+  components: {
+    AddBook,
   },
   methods: {
     findByAuthor() {
@@ -89,7 +96,7 @@ export default {
       const LIMIT = 100
       let safeKey = encodeURIComponent(key)
       console.log(key)
-      
+
       return fetch(`https://openlibrary.org/authors/${safeKey}/works.json?limit=${LIMIT}`)
         .then((res) => {
           console.log(res)
@@ -107,18 +114,17 @@ export default {
 </script>
 
 <style>
-
 #searchfield {
-  box-sizing:border-box;
-  position:absolute;
-  height:7%;
+  box-sizing: border-box;
+  position: absolute;
+  height: 7%;
   left: 49.22%;
   right: 12.76%;
   top: 3%;
   bottom: 23.14%;
   text-indent: 10%;
-  background: #FFFFFF;
-  border: 2px solid #8AA1A6;
+  background: #ffffff;
+  border: 2px solid #8aa1a6;
   border-radius: 20px;
 }
 </style>
