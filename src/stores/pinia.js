@@ -11,6 +11,7 @@ export const useCounterStore = defineStore("counter", {
       listedReadBooks: [],
       // See above
       listedBooks: [],
+      username: "Guest",
     }
   },
 })

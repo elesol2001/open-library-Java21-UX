@@ -20,7 +20,7 @@ function displayInfo() {
   document.body.append(popup)
   let para = document.createElement("p")
   para.id = "infoparagraph"
-  para.innerHTML = "Version 1.0 <br><br> Bokhylla skapad av Java21 och UX22"
+  para.innerHTML = "Version 1.0 skapad av JAVA21 & UX22 API: OpenLibrary YRGO Göteborg"
   popup.append(para)
   let xbutton = document.createElement("button")
   xbutton.id = "xbutton"
@@ -33,6 +33,7 @@ function displayInfo() {
 </script>
 
 <template>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
   <nav id="top-navigation-bar">
     <RouterLink id="booklogo" to="/"><img src="@/assets/book-logo.svg" alt="Logo" /></RouterLink>
     <input
@@ -54,6 +55,7 @@ function displayInfo() {
 </template>
 
 <style>
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(1, 3fr);
@@ -70,7 +72,6 @@ function displayInfo() {
   background-color: #f2eeeb;
 }
 
-
 #bottom-navigation-bar {
   bottom: 0px;
   background-color: #bfd6d9;
@@ -78,19 +79,6 @@ function displayInfo() {
   justify-content: space-evenly;
 }
 
-<<<<<<< HEAD
-#booklogo {
-  padding-left: 3%;
-
-}
-
-#container {
-  display: flex;
-  flex-direction: row;
-}
-
-=======
->>>>>>> refs/remotes/origin/main
 #info-button {
   margin-left: auto;
   float: right;
@@ -99,7 +87,7 @@ function displayInfo() {
 
 #popup {
   height: 40%;
-  background: white;
+  background: #F2EEEB;
   position: fixed;
   top: 35%;
   left: 50%;
@@ -107,7 +95,6 @@ function displayInfo() {
   margin-left: -45%;
   border-radius: 5%;
   width: 90%;
-  border: 2px gray solid;
 }
 
 #xbutton {
@@ -118,7 +105,7 @@ function displayInfo() {
   border: none;
   background-size: cover;
   float: right;
-  margin-top: -45%;
+  margin-top: -60%;
 }
 
 #dim {
@@ -139,6 +126,7 @@ function displayInfo() {
   align-self: center;
   font-size: 0.7cm;
   padding-left: 3%;
+  padding-top: 5%;
 }
 
 @media screen and (min-width: 500px) and (min-height: 700px) {
@@ -152,9 +140,8 @@ function displayInfo() {
   }
 
   #bottom-navigation-bar {
-  position: sticky;
-}
-
+    position: sticky;
+  }
 }
 
 @media screen and (min-width: 900px) {
@@ -162,5 +149,9 @@ function displayInfo() {
     width: 50%;
     margin-left: -25%;
   }
+
+  #xbutton {
+      margin-top: -20%;
+  } 
 }
 </style>

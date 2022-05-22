@@ -18,6 +18,7 @@ export default {
         ["https://covers.openlibrary.org/w/id/10860425-M.jpg", "cool book", false],
       ],
       listTwo: [["https://covers.openlibrary.org/w/id/6297693-M.jpg", "cool book", false]],
+      username: "",
     }
   },
   components: {
@@ -25,6 +26,7 @@ export default {
   },
   created() {
     this.getData()
+    this.username = counter.username
   },
   methods: {
     setToRead() {
@@ -82,6 +84,15 @@ export default {
     getData() {
       counter.listedBooks = JSON.parse(localStorage.getItem("books"))
       counter.listedReadBooks = JSON.parse(localStorage.getItem("readbooks"))
+      counter.username = localStorage.getItem("username")
+
+      if (counter.username === null) {
+        counter.username = "Guest"
+        this.username = "Guest"
+      } else {
+        this.username = counter.username
+      }
+
       // Grabs all the data and creates the arrays.
       if (counter.listedBooks === undefined) {
         counter.listedBooks = []
@@ -97,7 +108,9 @@ export default {
 <template>
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
   <header>
+    <h1 id="welcome">Välkommen till Book, {{ this.username }}!</h1>
     <div class="wrapper">
+      <h1>För dig</h1>
       <h1>Lisa's RESOLVED</h1>
       <div id="books">
         <BookIndex v-for="v in listOne" :key="v[0]" :bookCover="v[0]" :bookName="v[1]" :read="v[2]" />
@@ -132,10 +145,17 @@ body {
   overflow-x: auto;
 }
 
+#welcome {
+  text-align: center;
+  padding-bottom: 3%;
+  padding-top: 1%;
+}
+
 #books > * {
   margin-left: 2%;
   flex-wrap: nowrap;
 }
+
 #books::-webkit-scrollbar {
   display: none;
 }
