@@ -8,14 +8,30 @@
 </template>
 
 <script>
+import { useCounterStore } from "@/stores/pinia.js"
+
+let counter
+
 export default {
+  setup() {
+    counter = useCounterStore()
+  },
   data() {
     return {
       isBookAdded: false,
     }
   },
+  props: ["book"],
   methods: {
     addBook() {
+      if (this.isBookAdded === false) {
+        counter.books.push(this.book)
+
+        console.log("New book added")
+        console.log(counter.books)
+      }
+      // need to add else-statement to remove book on off-toggle
+
       this.isBookAdded = !this.isBookAdded
     },
   },
