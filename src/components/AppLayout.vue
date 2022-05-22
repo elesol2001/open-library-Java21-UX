@@ -43,7 +43,8 @@ function displayInfo() {
     </div>
 
     <input type="image" @click="displayInfo" id="info-button"
-      src="https://cdn.discordapp.com/attachments/957985598944194573/973834193052246066/Informationikon.png" alt="info"/>
+      src="https://cdn.discordapp.com/attachments/957985598944194573/973834193052246066/Informationikon.png"
+      alt="info" />
   </nav>
 
   <RouterView />
@@ -58,8 +59,13 @@ function displayInfo() {
 <style>
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(1, 3fr);
-  grid-template-rows: 1fr auto 0.3fr;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  /* grid-template-columns: repeat(1, 3fr);
+  grid-template-rows: 1fr auto 0.3fr; */
 }
 
 .body-view {
@@ -160,6 +166,10 @@ function displayInfo() {
     flex-direction: row;
   }
 
+  #top-navigation-logo {
+    display: none;
+  }
+
   #bottom-navigation-bar {
     position: sticky;
   }
@@ -182,5 +192,6 @@ function displayInfo() {
   #bottom-navigation-bar {
     display: none;
   }
+
 }
 </style>
