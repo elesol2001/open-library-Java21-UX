@@ -22,20 +22,17 @@
           <div class="name">{{ searchResult.authorName }}</div>
           <div class="publishdate">{{ searchResult.first_publish_date }}</div>
         </div>
-        <div><AddBook /></div>
+        <div><AddBook :book="{ bookCover: searchResult.coverurl, bookName: searchResult.title }" /></div>
       </div>
     </div>
   </div>
 
-  <AddBook />
-  <IsBookRead />
   <footer-component></footer-component>
 </template>
 
 <script>
 import FooterComponent from "../components/FooterComponent.vue"
 import AddBook from "./AddBook.vue"
-import IsBookRead from "./IsBookRead.vue"
 
 export default {
   props: ["searchResults", "searchfield"],
@@ -46,7 +43,6 @@ export default {
   },
   components: {
     AddBook,
-    IsBookRead,
     FooterComponent,
   },
   methods: {
