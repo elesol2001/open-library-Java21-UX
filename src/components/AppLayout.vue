@@ -57,17 +57,6 @@ function displayInfo() {
 </template>
 
 <style>
-.grid-container {
-  display: grid;
-  display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  /* grid-template-columns: repeat(1, 3fr);
-  grid-template-rows: 1fr auto 0.3fr; */
-}
-
 .body-view {
   display: flex;
 }

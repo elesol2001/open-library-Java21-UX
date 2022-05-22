@@ -1,9 +1,9 @@
 <template>
   <div class="title-index">
-    <!-- <button @click="getTitle">Get title and summary here!</button> -->
     <div v-if="title">{{ title }}</div>
     <div v-if="sum">{{ sum }}</div>
   </div>
+  
   <footer-component></footer-component>
 </template>
 
@@ -34,3 +34,18 @@ export default {
   },
 }
 </script>
+
+<style>
+
+@media screen and (min-width: 500px) and (min-height: 700px) {
+ 
+ .title {
+    margin: 10em;
+  }
+  .title-index {
+    margin: 1em;
+  }
+
+}
+
+</style>
