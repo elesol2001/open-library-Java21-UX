@@ -24,9 +24,11 @@
   </div>
 
   <AddBook />
+  <footer-component></footer-component>
 </template>
 
 <script>
+import FooterComponent from '../components/FooterComponent.vue'
 import AddBook from "./AddBook.vue"
 
 export default {
@@ -38,6 +40,7 @@ export default {
   },
   components: {
     AddBook,
+    FooterComponent,
   },
   methods: {
     findByAuthor() {

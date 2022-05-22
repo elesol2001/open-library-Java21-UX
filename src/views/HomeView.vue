@@ -4,10 +4,12 @@
       <RouterLink :to="'/book/' + t">{{ t }}</RouterLink>
     </li>
   </ul>
+  <footer-component></footer-component>
 </template>
 
 <script>
 import { RouterLink } from "vue-router"
+import FooterComponent from '../components/FooterComponent.vue'
 
 export default {
   data() {
@@ -16,7 +18,8 @@ export default {
     }
   },
   components: {
-    RouterLink,
+    RouterLink
+    FooterComponent,
   },
 }
 </script>

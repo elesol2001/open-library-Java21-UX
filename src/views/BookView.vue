@@ -5,11 +5,13 @@
     <title-index :work="thing"></title-index>
     <author-index :author="thing"></author-index>
   </div>
+  <footer-component></footer-component>
 </template>
 
 <script>
 import TitleIndex from "../components/TitleIndex.vue"
 import AuthorIndex from "../components/AuthorIndex.vue"
+import FooterComponent from '../components/FooterComponent.vue'
 
 export default {
   props: ["thing"],
@@ -21,6 +23,7 @@ export default {
   components: {
     TitleIndex,
     AuthorIndex,
+    FooterComponent,
   },
 }
 </script>

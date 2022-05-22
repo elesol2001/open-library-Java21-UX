@@ -2,6 +2,7 @@
 import BookIndex from "../components/BookIndex.vue"
 import MyLibraryVue from "../views/MyLibrary.vue"
 import { useCounterStore } from "../stores/pinia.js"
+import FooterComponent from '../components/FooterComponent.vue'
 
 let counter
 
@@ -21,6 +22,7 @@ export default {
   },
   components: {
     BookIndex,
+    FooterComponent,
   },
   created() {
     this.getData()
@@ -128,6 +130,7 @@ export default {
         />
       </div>
     </div>
+    <footer-component></footer-component>
   </header>
 </template>
 

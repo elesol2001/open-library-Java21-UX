@@ -4,6 +4,7 @@
     <div v-if="title">{{ title }}</div>
     <div v-if="sum">{{ sum }}</div>
   </div>
+  <footer-component></footer-component>
 </template>
 
 <script>
