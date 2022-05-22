@@ -55,7 +55,6 @@ function displayInfo() {
 </template>
 
 <style>
-
 .grid-container {
   display: grid;
   grid-template-columns: repeat(1, 3fr);
@@ -74,6 +73,8 @@ function displayInfo() {
 
 #bottom-navigation-bar {
   bottom: 0px;
+  position: fixed;
+  width: 100%;
   background-color: #bfd6d9;
   display: flex;
   justify-content: space-evenly;
@@ -87,7 +88,7 @@ function displayInfo() {
 
 #popup {
   height: 40%;
-  background: #F2EEEB;
+  background: #f2eeeb;
   position: fixed;
   top: 35%;
   left: 50%;
@@ -151,7 +152,7 @@ function displayInfo() {
   }
 
   #xbutton {
-      margin-top: -20%;
-  } 
+    margin-top: -20%;
+  }
 }
 </style>
