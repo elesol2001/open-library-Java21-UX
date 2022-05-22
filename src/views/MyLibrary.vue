@@ -22,12 +22,9 @@ export default {
     FooterComponent,
   },
   created() {
-    //localStorage.clear()
+   // localStorage.clear()
 
-    this.saveBook("https://covers.openlibrary.org/b/isbn/0450032205-M.jpg", "cool book")
-    this.saveReadBook("https://covers.openlibrary.org/b/isbn/0450032205-M.jpg", "cool book")
-    this.saveBook("https://covers.openlibrary.org/b/isbn/0393964523-M.jpg", "cool book")
-    this.saveBook("https://covers.openlibrary.org/b/isbn/0521222311-M.jpg", "cool book")
+//    this.saveBook("https://covers.openlibrary.org/w/id/7073537-M.jpg", "Treasure Island", "OL24034W")
 
     this.getData()
     this.username = counter.username
@@ -50,9 +47,9 @@ export default {
         }
       }
     },
-    saveBook(bookCover, bookName) {
+    saveBook(bookCover, bookName, path) {
       // Saves a book to the array and forwards it to localStorage
-      counter.listedBooks.push({ bookCover, bookName })
+      counter.listedBooks.push({ bookCover, bookName, path })
       localStorage.setItem("books", JSON.stringify(counter.listedBooks))
     },
     saveReadBook() {
@@ -90,10 +87,10 @@ export default {
         document.body.removeChild(dim)
       })
     },
-    addReadBook(bookCover, bookName) {
+    addReadBook(bookCover, bookName, path) {
       // Adds a book to the read book pinia
       let read = true
-      counter.readBooks.push({ bookCover, bookName, read })
+      counter.readBooks.push({ bookCover, bookName, read, path })
       counter.listedReadBooks = []
       counter.listedReadBooks = counter.readBooks
       this.mainReadBooks = counter.readBooks
@@ -124,10 +121,10 @@ export default {
       }
       return false
     },
-    addBook(bookCover, bookName) {
+    addBook(bookCover, bookName, path) {
       // Adds a book to books.
       let read = this.checkIfRead(bookCover)
-      counter.books.push({ bookCover, bookName, read })
+      counter.books.push({ bookCover, bookName, read, path })
       this.mainBooks = counter.books
     },
     changeName(txt) {
@@ -150,14 +147,14 @@ export default {
 
       if (counter.listedReadBooks != null) {
         for (let v of counter.listedReadBooks) {
-          this.addReadBook(v.bookCover, v.bookName, v.read)
+          this.addReadBook(v.bookCover, v.bookName, v.read, v.path)
         }
       } else {
         counter.listedReadBooks = []
       }
       if (counter.listedBooks != null) {
         for (let v of counter.listedBooks) {
-          this.addBook(v.bookCover, v.bookName, v.read)
+          this.addBook(v.bookCover, v.bookName, v.path)
         }
       } else counter.listedBooks = []
     },
@@ -190,6 +187,7 @@ export default {
           :bookCover="v.bookCover"
           :bookName="v.bookName"
           :read="v.read"
+          :path="v.path"
         />
       </div>
       <h1>Lästa böcker</h1>
@@ -200,6 +198,7 @@ export default {
           :bookCover="v.bookCover"
           :bookName="v.bookName"
           :read="v.read"
+          :path="v.path"
         />
       </div>
     </div>

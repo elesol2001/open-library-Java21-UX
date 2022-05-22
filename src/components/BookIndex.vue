@@ -1,7 +1,11 @@
 <script>
 import MyLibraryVue from "../views/MyLibrary.vue"
+let link = ""
 export default {
-  props: ["bookCover", "bookName", "read"],
+  props: ["bookCover", "bookName", "read", "path"],
+  created() {
+    link = this.path
+  },
   methods: {
     addRead() {
       if (MyLibraryVue.methods.checkIfRead(this.bookCover)) {
@@ -25,9 +29,9 @@ export default {
 
 <template>
   <div class="book-layout">
-    <a href="index.html">
+    <router-link :to="{ name: 'book', params: { thing: `${this.path}` } }">
       <img class="cover" :title="bookName" :src="bookCover" />
-    </a>
+    </router-link>
     <div class="book-buttons">
       <input
         @click="removeB"

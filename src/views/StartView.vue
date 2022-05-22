@@ -126,15 +126,15 @@ export default {
       <h1>För dig</h1>
       <h1>Ett besök under filten</h1>
       <div id="books">
-        <BookIndex v-for="v in listOne" :key="v[0]" :bookCover="v[0]" :bookName="v[1]" :read="v[2]" />
+        <BookIndex v-for="v in listOne" :key="v[0]" :bookCover="v[0]" :bookName="v[1]" :read="v[2]" :path="v[3]" />
       </div>
       <h1>Ej glömda genom generationer</h1>
       <div id="books">
-        <BookIndex v-for="v in listTwo" :key="v[0]" :bookCover="v[0]" :bookName="v[1]" :read="v[2]" />
+        <BookIndex v-for="v in listTwo" :key="v[0]" :bookCover="v[0]" :bookName="v[1]" :read="v[2]" :path="v[3]" />
       </div>
       <h1>Vad laptopen ville ha</h1>
       <div id="books">
-        <BookIndex v-for="v in listThree" :key="v[0]" :bookCover="v[0]" :bookName="v[1]" :read="v[2]" />
+        <BookIndex v-for="v in listThree" :key="v[0]" :bookCover="v[0]" :bookName="v[1]" :read="v[2]" :path="v[3]" />
       </div>
     </div>
     <footer-component></footer-component>
