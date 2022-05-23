@@ -1,10 +1,9 @@
 <script>
 import MyLibraryVue from "../views/MyLibrary.vue"
-let link = ""
 export default {
   props: ["bookCover", "bookName", "read", "path"],
   created() {
-    link = this.path
+  
   },
   methods: {
     addRead() {
@@ -15,8 +14,8 @@ export default {
         return false
       }
 
-      MyLibraryVue.methods.addReadBook(this.bookCover, this.bookName)
-      MyLibraryVue.methods.saveReadBook(this.bookCover, this.bookName)
+      MyLibraryVue.methods.addReadBook(this.bookCover, this.bookName, this.path)
+      MyLibraryVue.methods.saveReadBook(this.bookCover, this.bookName, this.path)
       this.$read = true
       this.$forceUpdate()
     },
