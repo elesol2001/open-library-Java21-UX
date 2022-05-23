@@ -43,7 +43,6 @@ function displayInfo() {
       <RouterLink to="/mylib"><img src="@/assets/library-icon.svg" alt="Library" /></RouterLink>
     </div>
     <input id="searchfield" placeholder="search title, author"> 
-    <RouterLink to="/searchIndex"><img id="small" src="@/assets/search-icon.svg" alt="Search"></RouterLink>
     <input type="image" @click="displayInfo" id="info-button"
       src="https://cdn.discordapp.com/attachments/957985598944194573/973834193052246066/Informationikon.png"
       alt="info" />
