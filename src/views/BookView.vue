@@ -1,22 +1,18 @@
 <template>
-  '
-  <!-- DESKTOP VERSION -->
   <div class="book">
-    <div class="book-item">
-      <div id="book-image">
-        <img :src="imageUrl" alt="" />
-      </div>
+    <div class="book-image">
+      <img :src="imageUrl" alt="" />
+    </div>
 
-      <div class="book-data">
-        <div class="book-title">
-          <h1><title-index :work="thing"></title-index></h1>
-        </div>
-        <div class="book-author">
-          <author-index :author="thing"></author-index>
-        </div>
-        <div class="book-summary">
-          <title-index :summary="thing"></title-index>
-        </div>
+    <div class="book-data">
+      <div class="book-title">
+        <h1><title-index :work="thing"></title-index></h1>
+      </div>
+      <div class="book-author">
+        <author-index :author="thing"></author-index>
+      </div>
+      <div class="book-summary">
+        <title-index :summary="thing"></title-index>
       </div>
     </div>
   </div>
@@ -52,49 +48,50 @@ body {
 .book {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1rem;
-  padding-top: 8%;
-  padding-left: 15%;
+  align-items: center;
 }
 
-.book-item {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+.book-data > div {
+  margin-bottom: 1rem;
 }
 
 .book-title {
-  color: rgba(89, 84, 86, 1);
-  font-weight: 500;
-  margin-left: 0.6em;
-  margin-right: 10em;
-  text-align: left;
+  text-align: center;
 }
 
 .book-author {
-  padding-top: 3%;
-  font-size: 16px;
-  font-weight: 400;
-  margin-left: 2em;
-  margin-right: 10em;
-  text-align: left;
+  text-align: center;
 }
 
 .book-summary {
-  padding-top: 3%;
-  font-size: 16px;
-  font-weight: 400;
-  margin-left: 2em;
-  margin-right: 10em;
+  margin-left: 1rem;
+  margin-right: 1rem;
   text-align: left;
 }
 
-@media screen and (min-width: 500px) and (min-height: 700px) {
+@media screen and (min-width: 900px) {
   .book {
-    margin: auto;
-    width: 50%;
-    padding: 1em;
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    margin-left: 15rem;
+    margin-right: 15rem;
+  }
+
+  .book-data {
+    margin-left: 3rem;
+  }
+
+  .book-title {
+    text-align: left;
+  }
+
+  .book-author {
+    text-align: left;
+  }
+
+  .book-summary {
+    text-align: left;
+    margin: 0;
   }
 }
 </style>
