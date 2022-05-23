@@ -1,4 +1,3 @@
-Serchindex
 <template>
   <div class="searchpage">
     <div id="rectangle"></div>
@@ -198,4 +197,3 @@ hr {
 }
 
 </style>
-

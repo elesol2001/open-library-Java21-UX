@@ -1,4 +1,3 @@
-App layout
 <script>
 import { RouterLink, RouterView } from "vue-router"
 
@@ -76,20 +75,25 @@ function displayInfo() {
   background-color: #f2eeeb;
   width: 10%;
   position: absolute;
-  right: 50px;
+  right: 27px;
   top: 1.5em;
   padding-left: 2%;
 }
 #searchfield{
   padding: 1%;
-  margin-top: 2%;
+  margin-top: 4%;
+  z-index: -1;
+  position:absolute; 
+  
   
   
 }
 #small {
-  margin-left: 65%;
-  width: 2%;
+  margin-left: 55%;
+  width: 1.4%;
   padding-bottom: 2%;
+  padding-top: 4.8%;
+  position:absolute;
   
 
 }
@@ -98,9 +102,12 @@ function displayInfo() {
   width: 50px;
   height: 50px;
   left: 93%;
-  top: 22%;
-  
+  top: 25%;
+  margin-left: auto;
+  float: right;
+  color: rgba(89, 84, 86, 1);
 }
+
 
 
 #bottom-navigation-bar {
@@ -111,12 +118,6 @@ function displayInfo() {
   background-color: #bfd6d9;
   display: flex;
   justify-content: space-evenly;
-}
-
-#info-button {
-  margin-left: auto;
-  float: right;
-  color: rgba(89, 84, 86, 1);
 }
 
 #popup {
@@ -198,4 +199,3 @@ function displayInfo() {
 
 }
 </style>
-
