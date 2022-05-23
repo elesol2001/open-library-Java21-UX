@@ -1,8 +1,8 @@
 <template>
-  <button @click="addBook" v-if="isBookAdded">
+  <button @click="addBookToLibrary" v-if="isBookAdded">
     <img src="@/assets/added-book-icon.svg" alt="Book has been added" style="width: 4 0px; height: 40px" />
   </button>
-  <button @click="addBook" v-else>
+  <button @click="addBookToLibrary" v-else>
     <img src="@/assets/add-book-icon.svg" alt="Add book" style="width: 4 0px; height: 40px" />
   </button>
 </template>
@@ -31,7 +31,6 @@ export default {
         console.log(JSON.parse(localStorage.getItem("books")))
         localStorage.setItem("books", JSON.stringify(counter.listedBooks))
         console.log(JSON.parse(localStorage.getItem("books")))
-
       } else {
         for (let i = 0; i < counter.books.length; i++) {
           if (this.book.title === counter.books[i].title) {
