@@ -13,23 +13,31 @@ export default {
 
   data() {
     return {
-      title: null,
-      sum: null,
+      title: [],
+      sum: [],
     }
   },
   created() {
-    this.getTitle()
+    this.getTitle(),
+    this.getSum()
+
   },
   methods: {
     async getTitle() {
       const resp = await fetch(`https://openlibrary.org/works/${this.work}.json`)
       const data = await resp.json()
-      const title = data.title
-      this.title = title
 
-      const sum = data.description
-      this.sum = sum
+      let title = data.title
+      this.title = title
     },
+
+    async getSum() {
+      const resp = await fetch(`https://openlibrary.org/works/${this.work}.json`)
+      const data = await resp.json()
+
+      let sum = data.description.value
+      this.sum = sum
+    }
 
   },
 }

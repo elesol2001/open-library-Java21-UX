@@ -1,14 +1,20 @@
 <template>
-  <div class="book">
-    <h1>{{ thing }}</h1>
-    <img :src="imageUrl" alt="" />
+    <div id="book-title">
+      <h1>{{ thing }}</h1>
+    </div>
+
+    <div id="book-image">
+      <img :src="imageUrl" alt="" />
+    </div>
+
     <div id="title-div">
       <title-index :work="thing"></title-index>
     </div>
+
     <div id="author-div">
       <author-index :author="thing"></author-index>
     </div>
-  </div>
+
   <footer-component></footer-component>
 </template>
 
@@ -33,30 +39,27 @@ export default {
 </script>
 
 <style>
-.book {
+template {
   display: flex;
 }
 
-.book h1 {
-  position: absolute;
+#book-title {
   margin-top: 5%;
-  left: 50%;
+  margin-left: 30%;
 }
 
-.book img {
-  display: flex;
+#book-image {
   margin-top: 5%;
-  margin-left: 20%;
+  margin-left: 15%;
 }
 
-.book #title-div {
-  position: absolute;
-  margin-top: 10%;
-  left: 50%;
+#title-div {
+  margin-top: 5%;
+  margin-left: 30%;
 }
-.book #author-div {
-  position: absolute;
-  margin-top: 15%;
+
+#author-div {
+  margin-top: 20em;
   left: 50%;
 }
 
