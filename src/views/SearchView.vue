@@ -1,13 +1,11 @@
 <script>
-import TitleIndex from "../components/TitleIndex.vue"
+import TitleIndex from "../components/TitleAndSumIndex.vue"
 import AuthorIndex from "../components/AuthorIndex.vue"
-import SummaryIndex from "../components/SummaryIndex.vue"
 
 export default {
   components: {
     TitleIndex,
     AuthorIndex,
-    SummaryIndex,
   },
 }
 </script>
