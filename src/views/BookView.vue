@@ -67,11 +67,13 @@ body {
   color: rgba(89, 84, 86, 1);
   font-weight: 500;    
   margin-left: 2em;
-
+  margin-right: 10em;
 }
 
 .book-title {
   margin-left: 2em;
+  margin-right: 10em;
+
 }
 
 .book-author {
@@ -79,6 +81,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   margin-left: 2em;
+  margin-right: 10em;
 }
 @media screen and (min-width: 500px) and (min-height: 700px) {
   .book {
