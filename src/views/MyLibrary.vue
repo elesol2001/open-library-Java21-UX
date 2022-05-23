@@ -24,7 +24,7 @@ export default {
   created() {
     // localStorage.clear()
 
-    // this.saveBook("https://covers.openlibrary.org/w/id/7073537-M.jpg", "Treasure Island", "OL24034W")
+    this.saveBook("https://covers.openlibrary.org/w/id/7073537-M.jpg", "Treasure Island", "OL24034W")
 
     this.getData()
     this.username = counter.username

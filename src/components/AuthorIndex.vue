@@ -10,7 +10,7 @@ export default {
   data() {
     return {
       authors: null,
-      authorName: [],
+      authorName: "",
     }
   },
   created() {
@@ -22,12 +22,19 @@ export default {
       const data = await resp.json()
       let authors = data.authors.map((a) => a.author.key)
       this.authors = authors
+      
+      let delimiter = " "
+      if (authors.length > 1) {
+        delimiter = ", "
+      }
 
       for (let i of authors) {
+        
         const respAuthor = await fetch(`https://openlibrary.org${i}.json`)
         const dataAuthor = await respAuthor.json()
         let authorName = dataAuthor.name
-        this.authorName.push(authorName)
+        this.authorName += authorName + delimiter
+        console.log(authorName)
       }
     },
   },
