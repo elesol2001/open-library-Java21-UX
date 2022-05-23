@@ -39,11 +39,9 @@ function displayInfo() {
     <div id="top-navigation-logo">
       <RouterLink to="/mylib"><img src="@/assets/library-icon.svg" alt="Library" /></RouterLink>
     </div>
-    <input id="searchfield" placeholder="search title, author" />
-    <input
-      type="image"
-      @click="displayInfo"
-      id="info-button"
+    <input id="appsearch" class="searchfield" placeholder="search title, author"> 
+    <RouterLink to="/searchIndex"><img id="small" src="@/assets/search-icon.svg" alt="Search"></RouterLink>
+    <input type="image" @click="displayInfo" id="info-button"
       src="https://cdn.discordapp.com/attachments/957985598944194573/973834193052246066/Informationikon.png"
       alt="info"
     />
@@ -77,19 +75,30 @@ function displayInfo() {
 #top-navigation-logo {
   display: none;
 }
-#searchfield {
-  padding: 1%;
-  margin-top: 4%;
-  z-index: -1;
-  position: absolute;
+.searchfield {
+  box-sizing: border-box;
+  position: fixed;
+  height: 5%;
+  left: 46%;
+  right: 15%;
+  top: 0.1%;
+  text-indent: 10%;
+  background: #ffffff;
+  border: 2px solid #8aa1a6;
+  border-radius: 20px;
+  margin-top: 2.5%; 
 }
 
 #small {
-  margin-left: 55%;
+  margin-left: 60%;
+  margin-top: 0%;
   width: 1.4%;
   padding-bottom: 2%;
-  padding-top: 4.8%;
-  position: absolute;
+  padding-top: 3%;
+  position:fixed;
+  
+  
+
 }
 
 #info-button {

@@ -1,9 +1,8 @@
 <template>
-  <div class="searchpage">
-    <div id="rectangle"></div>
+  
     <div>
-      <input id="searchfield" v-model="searchfield" placeholder="search title, author" />
-      <br />{{}}<br />
+      <input class="searchfield" id="indexsearch" v-model="searchfield" placeholder="search title, author" />
+      <br />{{ }}<br />
     </div>
     <div class="meny">
       <button @click="findByAuthor">Author</button>
@@ -34,7 +33,7 @@
         </div>
       </div>
     </div>
-  </div>
+ 
 
   <footer-component></footer-component>
 </template>
@@ -128,14 +127,14 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 body {
   font-family: "Montserrat";
   color: rgba(89, 84, 86, 1);
 }
-#searchfield {
-  box-sizing: border-box;
-  position: absolute;
+.searchfield {
+   box-sizing: border-box;
+  position: fixed;
   height: 5%;
   left: 46%;
   right: 15%;
@@ -144,6 +143,13 @@ body {
   background: #ffffff;
   border: 2px solid #8aa1a6;
   border-radius: 20px;
+  margin-top: 2.5%;  
+}
+
+
+#appsearch {
+  z-index: -1;
+  display:fixed;
 }
 .meny {
   position: absolute;
@@ -201,4 +207,10 @@ hr {
   display: flex;
   flex-direction: column;
 }
+#bottom-footer {
+  bottom: 0px;
+  position: fixed;
+
+}
+
 </style>
