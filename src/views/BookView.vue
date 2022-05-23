@@ -7,11 +7,8 @@
       </div>
 
       <div class="book-data">
-        <div class="title">
-          <h1>{{ thing }}</h1>
-        </div>
         <div class="book-title">
-          <title-index :work="thing"></title-index>
+          <h1><title-index :work="thing"></title-index></h1>
         </div>
         <div class="book-author">
           <author-index :author="thing"></author-index>
@@ -65,16 +62,10 @@ body {
   justify-content: space-evenly;
 }
 
-.title {
-  font-size: 20px;
-  color: rgba(89, 84, 86, 1);
-  font-weight: 500;    
-  margin-left: 2em;
-  margin-right: 10em;
-}
-
 .book-title {
-  margin-left: 2em;
+  color: rgba(89, 84, 86, 1);
+  font-weight: 500;   
+  margin-left: 0.6em;
   margin-right: 10em;
 
 }
