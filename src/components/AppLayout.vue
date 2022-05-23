@@ -36,6 +36,7 @@ function displayInfo() {
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
   <nav id="top-navigation-bar">
     <RouterLink id="booklogo" to="/"><img src="@/assets/book-logo.svg" alt="Logo" /></RouterLink>
+<<<<<<< HEAD
     <div id="top-navigation-logo">
       <RouterLink to="/mylib"><img src="@/assets/library-icon.svg" alt="Library" /></RouterLink>
     </div>
@@ -44,6 +45,17 @@ function displayInfo() {
       type="image"
       @click="displayInfo"
       id="info-button"
+=======
+
+    <input id="searchfield" placeholder="search title, author">
+
+    <div id="top-navigation-logo">
+      <RouterLink to="/mylib"><img src="@/assets/library-icon.svg" alt="Library" /></RouterLink>
+    </div>
+
+
+    <input type="image" @click="displayInfo" id="info-button"
+>>>>>>> 38236412e115d1e335820d776f18af5b0ca79cb5
       src="https://cdn.discordapp.com/attachments/957985598944194573/973834193052246066/Informationikon.png"
       alt="info"
     />
@@ -73,13 +85,9 @@ function displayInfo() {
   padding-left: 4%;
 }
 
+
 #top-navigation-logo {
-  background-color: #f2eeeb;
-  width: 10%;
-  position: absolute;
-  right: 27px;
-  top: 1.5em;
-  padding-left: 2%;
+  display: none;
 }
 #searchfield {
   padding: 1%;
@@ -87,6 +95,7 @@ function displayInfo() {
   z-index: -1;
   position: absolute;
 }
+
 #small {
   margin-left: 55%;
   width: 1.4%;
@@ -94,6 +103,7 @@ function displayInfo() {
   padding-top: 4.8%;
   position: absolute;
 }
+
 #info-button {
   position: absolute;
   width: 50px;
@@ -106,7 +116,6 @@ function displayInfo() {
 }
 
 #bottom-navigation-bar {
-  /* bottom makes the nav-bar not movable*/
   bottom: 0px;
   position: sticky;
   width: 100%;
@@ -159,22 +168,8 @@ function displayInfo() {
   padding-top: 5%;
 }
 
-@media screen and (min-width: 500px) and (min-height: 700px) {
-  #xbutton {
-    margin-top: -18%;
-  }
-
-  #container {
-    display: flex;
-    flex-direction: row;
-  }
-
-  #bottom-navigation-bar {
-    position: sticky;
-  }
-}
-
-@media screen and (min-width: 900px) {
+/*DESKTOP */
+@media screen and (min-width: 700px) {
   #popup {
     width: 50%;
     margin-left: -25%;
@@ -183,10 +178,28 @@ function displayInfo() {
   #xbutton {
     margin-top: -20%;
   }
-}
 
+<<<<<<< HEAD
 @media screen and (min-width: 900px) {
   /* bottom nav will not be visible */
+=======
+  #searchfield {
+    padding: 1%;
+    margin-top: 4%;
+    z-index: -1;
+    position: absolute;
+    display: inline;
+  }
+
+
+  #top-navigation-logo {
+    display: inline;
+    position: absolute;
+    margin-left: 70%;
+    margin-top: 1.5em;
+  }
+
+>>>>>>> 38236412e115d1e335820d776f18af5b0ca79cb5
   #bottom-navigation-bar {
     display: none;
   }
