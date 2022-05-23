@@ -1,20 +1,23 @@
 <template>
-    <div id="book-title">
-      <h1>{{ thing }}</h1>
-    </div>
+  <div class="book">
+    <div class="book-item">
+      <div id="book-image">
+        <img :src="imageUrl" alt="" />
+      </div>
 
-    <div id="book-image">
-      <img :src="imageUrl" alt="" />
+      <div class="book-data">
+        <div class="title">
+          <h1>{{ thing }}</h1>
+        </div>
+        <div class="book-title">
+          <title-index :work="thing"></title-index>
+        </div>
+        <div class="book-author">
+          <author-index :author="thing"></author-index>
+        </div>
+      </div>
     </div>
-
-    <div id="title-div">
-      <title-index :work="thing"></title-index>
-    </div>
-
-    <div id="author-div">
-      <author-index :author="thing"></author-index>
-    </div>
-
+  </div>
   <footer-component></footer-component>
 </template>
 
@@ -39,30 +42,35 @@ export default {
 </script>
 
 <style>
-template {
+body {
+  font-family: "Montserrat";
+  color: rgba(89, 84, 86, 1)
+}
+
+.book {
   display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  padding-top: 8%;
+  padding-left: 15%;
 }
 
-#book-title {
-  margin-top: 5%;
-  margin-left: 30%;
+.book-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
-#book-image {
-  margin-top: 5%;
-  margin-left: 15%;
+.title {
+  font-size: 20px;
+  color: rgba(89, 84, 86, 1);
+  font-weight: 500;
 }
-
-#title-div {
-  margin-top: 5%;
-  margin-left: 30%;
+.book-author {
+  padding-top: 3%;
+  font-size: 16px;
+  font-weight: 400;
 }
-
-#author-div {
-  margin-top: 20em;
-  left: 50%;
-}
-
 @media screen and (min-width: 500px) and (min-height: 700px) {
   .book {
     margin: auto;
