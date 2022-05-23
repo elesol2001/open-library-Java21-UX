@@ -1,8 +1,4 @@
 <template>
-<<<<<<< HEAD
-<!-- DESKTOP VERSION -->
-=======
->>>>>>> 126f817a165d8cacf8ee090441211f85a241f8a8
   <div class="book">
     <div class="book-image">
       <img :src="imageUrl" alt="" />

@@ -36,7 +36,6 @@ function displayInfo() {
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
   <nav id="top-navigation-bar">
     <RouterLink id="booklogo" to="/"><img src="@/assets/book-logo.svg" alt="Logo" /></RouterLink>
-<<<<<<< HEAD
     <div id="top-navigation-logo">
       <RouterLink to="/mylib"><img src="@/assets/library-icon.svg" alt="Library" /></RouterLink>
     </div>
@@ -45,17 +44,6 @@ function displayInfo() {
       type="image"
       @click="displayInfo"
       id="info-button"
-=======
-
-    <input id="searchfield" placeholder="search title, author">
-
-    <div id="top-navigation-logo">
-      <RouterLink to="/mylib"><img src="@/assets/library-icon.svg" alt="Library" /></RouterLink>
-    </div>
-
-
-    <input type="image" @click="displayInfo" id="info-button"
->>>>>>> 38236412e115d1e335820d776f18af5b0ca79cb5
       src="https://cdn.discordapp.com/attachments/957985598944194573/973834193052246066/Informationikon.png"
       alt="info"
     />
@@ -179,10 +167,6 @@ function displayInfo() {
     margin-top: -20%;
   }
 
-<<<<<<< HEAD
-@media screen and (min-width: 900px) {
-  /* bottom nav will not be visible */
-=======
   #searchfield {
     padding: 1%;
     margin-top: 4%;
@@ -199,7 +183,6 @@ function displayInfo() {
     margin-top: 1.5em;
   }
 
->>>>>>> 38236412e115d1e335820d776f18af5b0ca79cb5
   #bottom-navigation-bar {
     display: none;
   }
