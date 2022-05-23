@@ -17,7 +17,7 @@ export default {
 
   data() {
     return {
-      title: [],
+      title: null,
       sum: null,
     }
   },
