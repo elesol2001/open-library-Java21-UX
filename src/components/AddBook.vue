@@ -1,8 +1,8 @@
 <template>
-  <button @click="addBook" v-if="isBookAdded">
+  <button @click="addBookToLibrary" v-if="isBookAdded">
     <img src="@/assets/added-book-icon.svg" alt="Book has been added" />
   </button>
-  <button @click="addBook" v-else>
+  <button @click="addBookToLibrary" v-else>
     <img src="@/assets/add-book-icon.svg" alt="Add book" />
   </button>
 </template>
@@ -23,12 +23,11 @@ export default {
   },
   props: ["book"],
   methods: {
-    addBook() {
+    addBookToLibrary() {
       if (this.isBookAdded === false) {
         counter.books.push(this.book)
 
         console.log("New book added")
-        console.log(counter.books)
       } else {
         for (let i = 0; i < counter.books.length; i++) {
           if (this.book.title === counter.books[i].title) {
