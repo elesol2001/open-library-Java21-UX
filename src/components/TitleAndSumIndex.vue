@@ -7,7 +7,7 @@
       <div v-if="sum">{{ sum }}</div>
     </div>
   </div>
-  
+
   <footer-component></footer-component>
 </template>
 
@@ -23,7 +23,7 @@ export default {
   },
   created() {
     this.getTitle(),
-    this.getSum()
+      this.getSum()
 
   },
   methods: {
@@ -39,8 +39,17 @@ export default {
       const resp = await fetch(`https://openlibrary.org/works/${this.summary}.json`)
       const data = await resp.json()
 
-      let sum = data.description
-      this.sum = sum
+      if (data.description.value) {
+        let sum = data.description.value
+        this.sum = sum
+        return sum
+      }
+      else {
+        let sum  = data.description
+        this.sum = sum
+        return sum
+      }
+
     }
 
   },
@@ -48,10 +57,5 @@ export default {
 </script>
 
 <style>
-
-@media screen and (min-width: 500px) and (min-height: 700px) {
- 
-
-}
-
+@media screen and (min-width: 500px) and (min-height: 700px) {}
 </style>
