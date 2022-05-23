@@ -1,3 +1,4 @@
+App layout
 <script>
 import { RouterLink, RouterView } from "vue-router"
 
@@ -38,10 +39,11 @@ function displayInfo() {
     <RouterLink id="booklogo" to="/"><img src="@/assets/book-logo.svg" alt="Logo" /></RouterLink>
 
     <div id="top-navigation-logo">
-      <RouterLink to="/searchIndex"><img src="@/assets/search-icon.svg" alt="Search" /></RouterLink>
+      
       <RouterLink to="/mylib"><img src="@/assets/library-icon.svg" alt="Library" /></RouterLink>
     </div>
-
+    <input id="searchfield" placeholder="search title, author"> 
+    <RouterLink to="/searchIndex"><img id="small" src="@/assets/search-icon.svg" alt="Search"></RouterLink>
     <input type="image" @click="displayInfo" id="info-button"
       src="https://cdn.discordapp.com/attachments/957985598944194573/973834193052246066/Informationikon.png"
       alt="info" />
@@ -76,14 +78,31 @@ function displayInfo() {
   width: 10%;
   position: absolute;
   right: 50px;
-  top: 1em;
+  top: 1.5em;
+  padding-left: 2%;
 }
+#searchfield{
+  padding: 1%;
+  margin-top: 2%;
+  
+  
+}
+#small {
+  margin-left: 65%;
+  width: 2%;
+  padding-bottom: 2%;
+  
 
+}
 #info-button {
-  top: 1em;
+  position: absolute;
   width: 50px;
   height: 50px;
+  left: 93%;
+  top: 22%;
+  
 }
+
 
 #bottom-navigation-bar {
   /* bottom makes the nav-bar not movable*/
@@ -180,3 +199,4 @@ function displayInfo() {
 
 }
 </style>
+

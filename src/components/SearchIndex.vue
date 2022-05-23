@@ -1,14 +1,15 @@
+Serchindex
 <template>
   <div class="searchpage">
     <div id="rectangle"></div>
     <div>
-      <input id="searchfield" v-model="searchfield" placeholder="search title, author, genre" />
-      <br />{{ searchfield }}<br />
+      <input id="searchfield" v-model="searchfield" placeholder="search title, author" />
+      <br />{{ }}<br />
     </div>
-    <div>
+    <div class="meny">
       <button @click="findByAuthor">Author</button>
       <button @click="findByTitle">Title</button>
-      <button @click="findByGenre">Genre</button>
+      <hr>
     </div>
 
     <div class="searchlist" v-for="searchResult in searchResults" :key="searchResult.key">
@@ -120,24 +121,70 @@ export default {
 </script>
 
 <style>
+body {
+  font-family: "Montserrat";
+  color: rgba(89, 84, 86, 1)
+}
 #searchfield {
   box-sizing: border-box;
   position: absolute;
-  height: 7%;
-  left: 49.22%;
-  right: 12.76%;
-  top: 3%;
-  bottom: 23.14%;
+  height: 5%;
+  left: 46%;
+  right: 15%;
+  top: 0.1%;
   text-indent: 10%;
   background: #ffffff;
   border: 2px solid #8aa1a6;
   border-radius: 20px;
+  
+  
+}
+.meny {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  margin-top: 2%;
+  margin-left: 15%;
+  column-gap: 5%; 
+}
+button {
+  outline: none;
+  border: none;
+  background-color: #ffffff;
+  font-size: 18px;
+  font-family: "Montserrat";
+  font-weight: 500;
+
+}
+hr {
+  width: 700px;
+  height:1px;
+  color: rgba(138, 161, 166, 1);
+  position: absolute;
+  top: 70%;
+  background-color: rgba(138, 161, 166, 1);
 }
 
 .searchlist {
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
+  padding-top: 8%;
+  padding-left: 15%;
+}
+.book-meta-data {
+  padding-top: 8%;
+  padding-left: 3%;
+}
+.title {
+  font-size: 20px;
+  color: rgba(89, 84, 86, 1);
+  font-weight: 500;
+}
+.name {
+  padding-top: 3%;
+  font-size: 16px;
+  font-weight: 400;
 }
 .search-list-item > div {
   display: flex;
@@ -149,4 +196,6 @@ export default {
   display: flex;
   flex-direction: column;
 }
+
 </style>
+
