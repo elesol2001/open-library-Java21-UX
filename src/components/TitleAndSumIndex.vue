@@ -55,7 +55,3 @@ export default {
   },
 }
 </script>
-
-<style>
-@media screen and (min-width: 500px) and (min-height: 700px) {}
-</style>
