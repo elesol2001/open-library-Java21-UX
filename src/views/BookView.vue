@@ -1,4 +1,5 @@
-<template>
+<template>'
+<!-- DESKTOP VERSION -->
   <div class="book">
     <div class="book-item">
       <div id="book-image">
@@ -64,12 +65,20 @@ body {
 .title {
   font-size: 20px;
   color: rgba(89, 84, 86, 1);
-  font-weight: 500;
+  font-weight: 500;    
+  margin-left: 2em;
+
 }
+
+.book-title {
+  margin-left: 2em;
+}
+
 .book-author {
   padding-top: 3%;
   font-size: 16px;
   font-weight: 400;
+  margin-left: 2em;
 }
 @media screen and (min-width: 500px) and (min-height: 700px) {
   .book {
