@@ -36,15 +36,17 @@ function displayInfo() {
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
   <nav id="top-navigation-bar">
     <RouterLink id="booklogo" to="/"><img src="@/assets/book-logo.svg" alt="Logo" /></RouterLink>
-
     <div id="top-navigation-logo">
-      
       <RouterLink to="/mylib"><img src="@/assets/library-icon.svg" alt="Library" /></RouterLink>
     </div>
-    <input id="searchfield" placeholder="search title, author"> 
-    <input type="image" @click="displayInfo" id="info-button"
+    <input id="searchfield" placeholder="search title, author" />
+    <input
+      type="image"
+      @click="displayInfo"
+      id="info-button"
       src="https://cdn.discordapp.com/attachments/957985598944194573/973834193052246066/Informationikon.png"
-      alt="info" />
+      alt="info"
+    />
   </nav>
 
   <RouterView />
@@ -79,23 +81,18 @@ function displayInfo() {
   top: 1.5em;
   padding-left: 2%;
 }
-#searchfield{
+#searchfield {
   padding: 1%;
   margin-top: 4%;
   z-index: -1;
-  position:absolute; 
-  
-  
-  
+  position: absolute;
 }
 #small {
   margin-left: 55%;
   width: 1.4%;
   padding-bottom: 2%;
   padding-top: 4.8%;
-  position:absolute;
-  
-
+  position: absolute;
 }
 #info-button {
   position: absolute;
@@ -108,12 +105,10 @@ function displayInfo() {
   color: rgba(89, 84, 86, 1);
 }
 
-
-
 #bottom-navigation-bar {
   /* bottom makes the nav-bar not movable*/
   bottom: 0px;
-  position: fixed;
+  position: sticky;
   width: 100%;
   background-color: #bfd6d9;
   display: flex;
@@ -191,11 +186,9 @@ function displayInfo() {
 }
 
 @media screen and (min-width: 900px) {
-
   /* bottom nav will not be visible */
   #bottom-navigation-bar {
     display: none;
   }
-
 }
 </style>

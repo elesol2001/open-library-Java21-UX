@@ -1,7 +1,7 @@
 <script>
 import BookIndex from "@/components/BookIndex.vue"
 import { useCounterStore } from "@/stores/pinia.js"
-import FooterComponent from '../components/FooterComponent.vue'
+import FooterComponent from "../components/FooterComponent.vue"
 
 let counter
 
@@ -22,9 +22,9 @@ export default {
     FooterComponent,
   },
   created() {
-   // localStorage.clear()
+    // localStorage.clear()
 
-//    this.saveBook("https://covers.openlibrary.org/w/id/7073537-M.jpg", "Treasure Island", "OL24034W")
+    // this.saveBook("https://covers.openlibrary.org/w/id/7073537-M.jpg", "Treasure Island", "OL24034W")
 
     this.getData()
     this.username = counter.username
@@ -54,7 +54,6 @@ export default {
     },
     saveReadBook() {
       // Saves to the read book localStorage
-      console.log(counter.readBooks.length)
       localStorage.setItem("readbooks", JSON.stringify(counter.listedReadBooks))
     },
     displayLogin() {
@@ -134,12 +133,12 @@ export default {
     },
     getData() {
       // Grabs all the data and creates the arrays.
-      console.log(this.ran)
       if (counter.ran) {
         this.mainBooks = counter.books
         this.mainReadBooks = counter.readBooks
         return false
       }
+
       counter.ran = true
 
       counter.listedBooks = JSON.parse(localStorage.getItem("books"))
@@ -222,6 +221,7 @@ body {
 #books {
   display: flex;
   overflow-x: auto;
+  overflow-y: hidden;
 }
 
 #username-header {

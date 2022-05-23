@@ -1,12 +1,13 @@
 <script>
+import AddBook from "../components/AddBook.vue"
 import MyLibraryVue from "../views/MyLibrary.vue"
+
 export default {
+  components: { AddBook },
   props: ["bookCover", "bookName", "read", "path"],
-  created() {
-  
-  },
   methods: {
     addRead() {
+      console.log()
       if (MyLibraryVue.methods.checkIfRead(this.bookCover)) {
         MyLibraryVue.methods.removeFromRead(this.bookCover)
         this.$read = false
@@ -23,6 +24,10 @@ export default {
       MyLibraryVue.methods.removeBook(this.bookCover)
     },
   },
+  addBook() {
+    AddBook.methods.addBook()
+    AddBook.$forceUpdate()
+  },
 }
 </script>
 
@@ -32,11 +37,9 @@ export default {
       <img class="cover" :title="bookName" :src="bookCover" />
     </router-link>
     <div class="book-buttons">
-      <input
-        @click="removeB"
-        type="image"
-        src="https://cdn.discordapp.com/attachments/957985598944194573/976433693298147368/Property_23.png"
-      />
+      <div>
+        <AddBook :book="{ bookCover: this.bookCover, bookName: this.bookName, read: this.read, path: this.path }" />
+      </div>
       <input
         type="image"
         @click="addRead"

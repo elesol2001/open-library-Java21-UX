@@ -1,4 +1,4 @@
-<template>'
+<template>
 <!-- DESKTOP VERSION -->
   <div class="book">
     <div class="book-item">

@@ -3,12 +3,12 @@
     <div id="rectangle"></div>
     <div>
       <input id="searchfield" v-model="searchfield" placeholder="search title, author" />
-      <br />{{ }}<br />
+      <br />{{}}<br />
     </div>
     <div class="meny">
       <button @click="findByAuthor">Author</button>
       <button @click="findByTitle">Title</button>
-      <hr>
+      <hr />
     </div>
 
     <div class="searchlist" v-for="searchResult in searchResults" :key="searchResult.key">
@@ -22,7 +22,16 @@
           <div class="name">{{ searchResult.authorName }}</div>
           <div class="publishdate">{{ searchResult.first_publish_date }}</div>
         </div>
-        <div><AddBook :book="{ bookCover: searchResult.coverurl, bookName: searchResult.title }" /></div>
+        <div>
+          <AddBook
+            :book="{
+              bookCover: searchResult.coverurl,
+              bookName: searchResult.title,
+              read: false,
+              path: searchResult.key,
+            }"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -122,7 +131,7 @@ export default {
 <style>
 body {
   font-family: "Montserrat";
-  color: rgba(89, 84, 86, 1)
+  color: rgba(89, 84, 86, 1);
 }
 #searchfield {
   box-sizing: border-box;
@@ -135,8 +144,6 @@ body {
   background: #ffffff;
   border: 2px solid #8aa1a6;
   border-radius: 20px;
-  
-  
 }
 .meny {
   position: absolute;
@@ -144,7 +151,7 @@ body {
   flex-direction: row;
   margin-top: 2%;
   margin-left: 15%;
-  column-gap: 5%; 
+  column-gap: 5%;
 }
 button {
   outline: none;
@@ -153,11 +160,10 @@ button {
   font-size: 18px;
   font-family: "Montserrat";
   font-weight: 500;
-
 }
 hr {
   width: 700px;
-  height:1px;
+  height: 1px;
   color: rgba(138, 161, 166, 1);
   position: absolute;
   top: 70%;
@@ -195,5 +201,4 @@ hr {
   display: flex;
   flex-direction: column;
 }
-
 </style>

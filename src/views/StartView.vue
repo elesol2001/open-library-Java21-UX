@@ -59,10 +59,6 @@ export default {
         }
       }
     },
-    saveBooks() {
-      // Saves a book to the array and forwards it to localStorage
-      localStorage.setItem("books", JSON.stringify(counter.listedBooks))
-    },
     saveReadBook() {
       // Saves to the read book localStorage
       localStorage.setItem("readbooks", JSON.stringify(counter.listedReadBooks))
@@ -95,6 +91,9 @@ export default {
       this.saveBooks()
     },
     getData() {
+      if (counter.ran) {
+        return false
+      }
       counter.listedBooks = JSON.parse(localStorage.getItem("books"))
       counter.listedReadBooks = JSON.parse(localStorage.getItem("readbooks"))
       counter.username = localStorage.getItem("username")
