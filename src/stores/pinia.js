@@ -12,6 +12,8 @@ export const useCounterStore = defineStore("counter", {
       // See above
       listedBooks: [],
       username: "Guest",
+      // Prevents MyLibrary from duplicating
+      ran: false,
     }
   },
 })

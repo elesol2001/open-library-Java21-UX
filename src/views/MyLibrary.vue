@@ -134,6 +134,14 @@ export default {
     },
     getData() {
       // Grabs all the data and creates the arrays.
+      console.log(this.ran)
+      if (counter.ran) {
+        this.mainBooks = counter.books
+        this.mainReadBooks = counter.readBooks
+        return false
+      }
+      counter.ran = true
+
       counter.listedBooks = JSON.parse(localStorage.getItem("books"))
       counter.listedReadBooks = JSON.parse(localStorage.getItem("readbooks"))
       counter.username = localStorage.getItem("username")
@@ -147,7 +155,7 @@ export default {
 
       if (counter.listedReadBooks != null) {
         for (let v of counter.listedReadBooks) {
-          this.addReadBook(v.bookCover, v.bookName, v.read, v.path)
+          this.addReadBook(v.bookCover, v.bookName, v.path)
         }
       } else {
         counter.listedReadBooks = []
