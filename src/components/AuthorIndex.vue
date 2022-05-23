@@ -28,7 +28,6 @@ export default {
         const dataAuthor = await respAuthor.json()
         let authorName = dataAuthor.name
         this.authorName.push(authorName)
-        console.log(authorName)
       }
     },
   },
