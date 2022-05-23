@@ -16,6 +16,9 @@
         <div class="book-author">
           <author-index :author="thing"></author-index>
         </div>
+        <div class="book-summary">
+          <title-index :summary="thing"></title-index>
+        </div>
       </div>
     </div>
   </div>
@@ -77,6 +80,14 @@ body {
 }
 
 .book-author {
+  padding-top: 3%;
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 2em;
+  margin-right: 10em;
+}
+
+.book-summary {
   padding-top: 3%;
   font-size: 16px;
   font-weight: 400;
