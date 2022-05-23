@@ -1,5 +1,6 @@
-<template>'
-<!-- DESKTOP VERSION -->
+<template>
+  '
+  <!-- DESKTOP VERSION -->
   <div class="book">
     <div class="book-item">
       <div id="book-image">
@@ -25,7 +26,7 @@
 <script>
 import TitleIndex from "../components/TitleIndex.vue"
 import AuthorIndex from "../components/AuthorIndex.vue"
-import FooterComponent from '../components/FooterComponent.vue'
+import FooterComponent from "../components/FooterComponent.vue"
 
 export default {
   props: ["thing"],
@@ -45,7 +46,7 @@ export default {
 <style>
 body {
   font-family: "Montserrat";
-  color: rgba(89, 84, 86, 1)
+  color: rgba(89, 84, 86, 1);
 }
 
 .book {
@@ -64,10 +65,10 @@ body {
 
 .book-title {
   color: rgba(89, 84, 86, 1);
-  font-weight: 500;   
+  font-weight: 500;
   margin-left: 0.6em;
   margin-right: 10em;
-
+  text-align: left;
 }
 
 .book-author {
@@ -76,6 +77,7 @@ body {
   font-weight: 400;
   margin-left: 2em;
   margin-right: 10em;
+  text-align: left;
 }
 
 .book-summary {
@@ -84,7 +86,9 @@ body {
   font-weight: 400;
   margin-left: 2em;
   margin-right: 10em;
+  text-align: left;
 }
+
 @media screen and (min-width: 500px) and (min-height: 700px) {
   .book {
     margin: auto;
