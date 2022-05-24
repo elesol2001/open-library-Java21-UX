@@ -11,7 +11,9 @@
       <div class="book-author">
         <author-index :author="thing"></author-index>
       </div>
+      <div class="line"></div>
       <div class="book-summary">
+        <h2>Beskrivning</h2>
         <title-index :summary="thing"></title-index>
       </div>
     </div>
@@ -49,10 +51,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 3rem ;
+
 }
 
 .book-data > div {
   margin-bottom: 1rem;
+  margin-left: 2rem;
+  margin-left: 2rem;
 }
 
 .book-title {
@@ -61,6 +67,14 @@ body {
 
 .book-author {
   text-align: center;
+}
+
+.line {
+  width: 85%;
+  height: 2px;
+  color: rgba(138, 161, 166, 1);
+  background-color: rgba(138, 161, 166, 1);
+  align-items: center;
 }
 
 .book-summary {
