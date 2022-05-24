@@ -28,7 +28,7 @@
               bookCover: searchResult.coverurl,
               bookName: searchResult.title,
               read: false,
-              path: searchResult.key,
+              path: searchResult.olid,
             }"
           />
         </div>
