@@ -162,7 +162,7 @@ button {
   font-weight: 500;
 }
 hr {
-  width: 700px;
+  width: 250px;
   height: 1px;
   color: rgba(138, 161, 166, 1);
   position: absolute;
