@@ -3,6 +3,7 @@
     <div>
       <input class="searchfield" id="indexsearch" v-model="searchfield" placeholder="search title, author" />
       <br />{{ }}<br />
+      <h1 id="text"> Search results </h1>
     </div>
     <div class="meny">
       <button @click="findByAuthor">Author</button>
@@ -176,6 +177,11 @@ hr {
   background-color: rgba(138, 161, 166, 1);
 }
 
+#text {
+  font-size: large;
+  margin-left: 16%;
+}
+
 .searchlist {
   display: flex;
   flex-direction: column;
@@ -184,7 +190,7 @@ hr {
   padding-left: 15%;
 }
 .book-meta-data {
-  padding-top: 8%;
+  padding-top: 10%;
   padding-left: 3%;
 }
 .title {
@@ -207,10 +213,14 @@ hr {
   display: flex;
   flex-direction: column;
 }
+
+#bottom-navigation-bar {
+  bottom: 0px;
+  position: fixed;
+}
 #bottom-footer {
   bottom: 0px;
   position: fixed;
-
 }
 
 </style>

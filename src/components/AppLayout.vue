@@ -89,18 +89,6 @@ function displayInfo() {
   margin-top: 2.5%; 
 }
 
-#small {
-  margin-left: 60%;
-  margin-top: 0%;
-  width: 1.4%;
-  padding-bottom: 2%;
-  padding-top: 3%;
-  position:fixed;
-  
-  
-
-}
-
 #info-button {
   position: absolute;
   width: 50px;
@@ -113,7 +101,7 @@ function displayInfo() {
 }
 
 #bottom-navigation-bar {
-  bottom: 0px;
+  
   position: sticky;
   width: 100%;
   background-color: #bfd6d9;
@@ -183,7 +171,12 @@ function displayInfo() {
     position: absolute;
     display: inline;
   }
-
+  #small {
+  margin-left: 55%;
+  margin-top: 4%;
+  width: 1.4%;
+  position:fixed;
+}
 
   #top-navigation-logo {
     display: inline;
@@ -195,5 +188,10 @@ function displayInfo() {
   #bottom-navigation-bar {
     display: none;
   }
+}
+@media screen and (max-width: 700px) {
+#small {
+  display: none;
+}
 }
 </style>
